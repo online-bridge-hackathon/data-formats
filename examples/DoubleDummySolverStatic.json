@@ -1,0 +1,44 @@
+{
+	"DDSOutput": {
+		"BoardNumber": 1,
+		"SolverResult": {
+			"North": {
+				"HCP": 12,
+				"Clubs": 5,
+				"Diamonds": 5,
+				"Hearts": 8,
+				"Spades": 8,
+				"NT": 6
+			},
+			"South": {
+				"HCP": 8,
+				"Clubs": 5,
+				"Diamonds": 5,
+				"Hearts": 8,
+				"Spades": 8,
+				"NT": 7
+			},
+			"East": {
+				"HCP": 12,
+				"Clubs": 8,
+				"Diamonds": 7,
+				"Hearts": 4,
+				"Spades": 5,
+				"NT": 6
+			},
+			"West": {
+				"HCP": 8,
+				"Clubs": 8,
+				"Diamonds": 8,
+				"Hearts": 5,
+				"Spades": 5,
+				"NT": 6
+			},
+			"BestResult": {
+				"Side": "NS",
+				"Contract": "2S",
+				"NSScore": 110
+			}
+		}
+	}
+}
