@@ -1,0 +1,181 @@
+openapi: 3.0.2
+info:
+  x-logo:
+    url: "logo.png"
+    backgroundColor: "#FFFFFF"
+    altText: "OCR LOGO"
+  description: | 
+    # Introduction
+    Object Character Recognition API that receives 4 hands at a bridge table and serves a LIN/PBN./etc describing the hand
+    
+    # OpenAPI Specification
+    This API is documented in **OpenAPI format**
+
+    # Cross-Origin Resource Sharing
+    This API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).
+    And that allows cross-domain communication from the browser.
+    All responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.
+
+    # Authentication
+
+    Forms of authentication:
+      - API Key
+  title: Bridge OCR
+  version: 0.0.1
+  termsOfService: http://example.com/terms/
+  contact:
+    name: API Support
+    email: support@example.com
+    url: http://example.com/support
+  license:
+    name: MIT
+externalDocs:
+  description: Full spec
+  url: https://online-bridge-hackathon.github.io/OCR/dds.yaml
+servers:
+  - description: dev
+    url: http://localhost:8080/
+tags:
+  - name: Hand
+    description: Hand related operations
+  - name: Auction
+    description: Auction related operations
+components:
+  responses:
+    Default:
+      description: Unexpected Error
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Error"
+    NotFound:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Error"
+    Success:
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Success"
+    Hand:
+      description: Hand Response Schema
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Hand"
+    Auction:
+      description: Auction Response Schema
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Auction"
+  schemas:
+    Error:
+      description: Default Error Response Container
+      properties:
+        code:
+          format: int32
+          type: integer
+        message:
+          type: string
+      required:
+      - code
+      - message
+      type: object
+    Success:
+      description: Success
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+      required:
+      - code
+      - message
+      type: object
+    Hand:
+      description: 'A full hand, e.g: ({N: [S3, H4, DJ,CA ], S: [S4...], ...})'
+      properties:
+        n:
+          type: array
+          items:
+            type: string
+        s:
+          type: array
+          items:
+            type: string
+        e: 
+          type: array
+          items:
+            type: string
+        w: 
+          type: array
+          items:
+            type: string
+      type: object
+    Auction:
+      description: 'A full auction e.g: ({})'
+      properties:
+        dealer:
+          type: string
+        sequence:
+          type: array
+          items:
+            type: string
+      type: object
+paths:
+  /api/hand:
+    post:
+      operationId: postHand
+      responses:
+        '200':
+           "$ref": "#/components/responses/Hand"
+        '400':
+          "$ref": "#/components/responses/NotFound"
+        '500':
+          "$ref": "#/components/responses/Default"
+        default:
+          "$ref": "#/components/responses/Default"
+      summary: Parses an image with cards, returning a complete hand in JSON
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                language:
+                  type: string
+                file:
+                  type: string
+                  format: binary
+      tags: 
+        - Hand
+  /api/auction:
+    post:
+      operationId: postAuction
+      responses:
+        '200':
+           "$ref": "#/components/responses/Auction"
+        '400':
+          "$ref": "#/components/responses/NotFound"
+        '500':
+          "$ref": "#/components/responses/Default"
+        default:
+          "$ref": "#/components/responses/Default"
+      summary: Parses an image with the auction, returning the auction in JSON
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                language:
+                  type: string
+                file:
+                  type: string
+                  format: binary
+      tags:
+        - Auction
