@@ -1,5 +1,5 @@
-# data-formats
-Specifications and Example JSONs
+# Specifications and Example JSONs
+
 
 ## API Specs (OpenApi 3 Standards)
 
