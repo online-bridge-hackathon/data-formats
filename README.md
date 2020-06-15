@@ -1,5 +1,4 @@
-# Specifications and Example JSONs
-
+# [GitHub Pages](https://online-bridge-hackathon.github.io/data-formats/)
 
 ## API Specs (OpenApi 3 Standards)
 
