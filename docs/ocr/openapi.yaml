@@ -31,7 +31,7 @@ info:
     name: MIT
 externalDocs:
   description: Full spec
-  url: https://online-bridge-hackathon.github.io/OCR/dds.yaml
+  url: openapi.yaml
 servers:
   - description: dev
     url: http://localhost:8080/
