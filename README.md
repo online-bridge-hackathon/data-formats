@@ -1,12 +1,13 @@
-# data-formats
-Specifications and Example JSONs
+# Specifications and Example JSONs
+
 
 ## API Specs (OpenApi 3 Standards)
 
-* [DDS](./docs/dds/ "DDS API")
 
-* [DEAL](./docs/deal/ "DEAL API")
+* [DDS](https://online-bridge-hackathon.github.io/data-formats/docs/dds/ "DDS API")
 
-* [OCR](./docs/ocr/ "OCR API")
+* [DEAL](https://online-bridge-hackathon.github.io/data-formats/docs/deal/ "DEAL API")
 
-* [PLAY-ENGINE](./docs/play-engine/ "PLAY ENGINE API")
+* [OCR](https://online-bridge-hackathon.github.io/data-formats/docs/ocr/ "OCR API")
+
+* [PLAY-ENGINE](https://online-bridge-hackathon.github.io/data-formats/docs/play-engine/ "PLAY ENGINE API")
