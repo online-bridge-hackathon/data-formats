@@ -95,14 +95,12 @@ components:
         application/json:
           schema:
             "$ref": "#/components/schemas/Success"
-    DealList:
-      description: Deal List response
+    BoardList:
+      description: Board List response
       content:
         application/json:
           schema:
-            type: array
-            items:
-              $ref: "#/components/schemas/Deal"
+            $ref: "#/components/schemas/BoardList"
   schemas:
     Error:
       description: Default Error Response Container
@@ -127,11 +125,14 @@ components:
       - code
       - message
       type: object
-    Deal:
-      description: A generated deal
-      additionalProperties:
-        type: string
-        format: uuid
+    BoardList:
+      description: Board array, uuid hands
+      properties:
+        boards: 
+          type: array
+          items: 
+            type: string
+            format: uuid
 paths:
   /api/deal:
     get:
@@ -144,7 +145,7 @@ paths:
         - $ref: '#/components/parameters/numberOfBoards'
       responses:
         '200':
-           "$ref": "#/components/responses/DealList"
+           "$ref": "#/components/responses/BoardList"
         '400':
           "$ref": "#/components/responses/NotFound"
         '500':
