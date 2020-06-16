@@ -148,6 +148,15 @@ paths:
               properties:
                 language:
                   type: string
+                  default: en
+                  enum: 
+                    - en
+                    - fr
+                    - pt
+                    - de
+                    - nl
+                    - it
+                    - es
                 file:
                   type: string
                   format: binary
