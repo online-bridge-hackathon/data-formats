@@ -7,6 +7,6 @@
 
 * [OCR](https://online-bridge-hackathon.github.io/data-formats/docs/ocr/ "OCR API")
 
-* "DEAL API"
+* [DEAL](https://online-bridge-hackathon.github.io/data-formats/docs/deal/ "DEAL API")
 
 * "PLAY ENGINE API"
