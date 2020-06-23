@@ -176,4 +176,5 @@ paths:
         - Convertion
       x-codeSamples:
         lang: curl
-        source: 'curl --header "Content-Type: application/json\" --request PUT --data '' https://.hackathon.globalbridge.app/'
+        source: | 
+          'curl --header "Content-Type: application/json\" --request PUT --data '' https://.hackathon.globalbridge.app/'
