@@ -1,0 +1,179 @@
+openapi: 3.0.2
+info:
+  x-logo:
+    url: "logo.png"
+    backgroundColor: "#FFFFFF"
+    altText: "LOGO"
+  description: |
+    # Introduction
+    An api that accepts a deal in one format and returns another
+
+    # OpenAPI Specification
+    This API is documented in **OpenAPI format**
+
+    # Cross-Origin Resource Sharing
+    This API features Cross-Origin Resource Sharing (CORS) implemented in compliance with  [W3C spec](https://www.w3.org/TR/cors/).
+    And that allows cross-domain communication from the browser.
+    All responses have a wildcard same-origin which makes them completely public and accessible to everyone, including any code on any site.
+
+    # Authentication
+
+    Forms of authentication:
+      - API Key
+  title: Data Converter
+  version: 0.0.1
+  termsOfService: http://example.com/terms/
+  contact:
+    name: API Support
+    email: support@example.com
+    url: http://example.com/support
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+externalDocs:
+  description: Full spec
+  url: openapi.yaml
+servers:
+  - description: dev
+    url: https://.hackathon.globalbridge.app/
+tags:
+  - name: Convertion
+    description: Convertion
+components:
+  parameters:
+    from:
+      required: true
+      description: From(input) format (JSON, PBN, LIN)
+      in: query
+      name: from
+      schema:
+        type: string
+        default: pbn
+        enum:
+          - json 
+          - pbn
+          - lin
+    to:
+      required: true
+      description: To(output) format (JSON, PBN, LIN)
+      in: query
+      name: to
+      schema:
+        type: string
+        default: json
+        enum:
+          - json 
+          - pbn
+          - lin
+    output:
+      required: true
+      description: Output type (JSON/File)
+      in: query
+      name: output
+      schema:
+        type: string
+        default: file
+        enum:
+          - json 
+          - file
+  responses:
+    Default:
+      description: Unexpected Error
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Error"
+    NotFound:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Error"
+    Success:
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "#/components/schemas/Success"
+    BoardList:
+      description: Board List response
+      content:
+        text/plain:
+          schema:
+            type: string
+            format: binary
+        application/json:
+          schema:
+            $ref: "#/components/schemas/BoardList"
+  schemas:
+    BoardList:
+      description: Board array
+      properties:
+        format: 
+          type: string
+          enum:
+            - json
+            - pbn 
+            - lin
+        boards: 
+          type: array
+          items: 
+            type: string
+    Error:
+      description: Default Error Response Container
+      properties:
+        code:
+          format: int32
+          type: integer
+        message:
+          type: string
+      required:
+      - code
+      - message
+      type: object
+    Success:
+      description: Success
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+      required:
+      - code
+      - message
+      type: object
+  requestBodies:
+    BoardData:
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+        application/json:
+          schema:
+            $ref: "#/components/schemas/BoardList"
+paths:
+  /api:
+    put:
+      operationId: putData
+      parameters:
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+        - $ref: "#/components/parameters/output"
+      responses:
+        '200':
+           "$ref": "#/components/responses/BoardList"
+        '400':
+          "$ref": "#/components/responses/NotFound"
+        '500':
+          "$ref": "#/components/responses/Default"
+        default:
+          "$ref": "#/components/responses/Default"
+      summary: Converts a set of boards between different formats (JSON, PBN, LIN...)
+      requestBody:
+        $ref: "#/components/requestBodies/BoardData"
+      tags: 
+        - Convertion
+      x-codeSamples:
+        lang: curl
+        source: 'curl --header "Content-Type: application/json\" --request PUT --data '' https://.hackathon.globalbridge.app/'
