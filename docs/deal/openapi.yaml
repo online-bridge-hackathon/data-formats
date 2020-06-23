@@ -156,5 +156,6 @@ paths:
       tags: 
         - Deal
       x-codeSamples:
-        lang: curl
-        source: 'curl --header "Content-Type: application/json\" --request GET https://.hackathon.globalbridge.app/'
+        - lang: curl
+          source: | 
+          curl --header "Content-Type: application/json\" --request GET https://.hackathon.globalbridge.app/

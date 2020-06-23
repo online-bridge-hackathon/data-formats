@@ -175,6 +175,6 @@ paths:
       tags: 
         - Convertion
       x-codeSamples:
-        lang: curl
-        source: | 
-          curl --header
+        - lang: curl
+          source: | 
+            curl --header
