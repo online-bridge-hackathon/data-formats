@@ -1,5 +1,5 @@
 ## Documentation 
-[API Documentation Page](https://online-bridge-hackathon.github.io/data-formats/) 
+# [API Documentation Page](https://online-bridge-hackathon.github.io/data-formats/) 
 
 * * *
 ##### ![Global Bridge App](docs/logo.png)
