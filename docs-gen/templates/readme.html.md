@@ -65,6 +65,16 @@ highlight_theme: darkula
 
 * [Raw(yaml)](./data-converter/openapi.yaml)
 
+## PLAY ENGINE API
+
+* [Shins](./play-engine/slate/index.html) Slate/MD | Several Code Samples
+
+* [AsyncApi Playground](https://playground.asyncapi.io?url=https://online-bridge-hackathon.github.io/data-formats/play-engine/asyncapi.yaml) Editor | Generators | Pub/Sub viewer
+
+* [AsyncApi HTML](./play-engine/html/index.html) HTML
+
+* [Raw(yaml)](./play-engine/asyncapi.yaml
+
 ## API KEYS
  
 * [Shins](.//slate/index.html) Slate/MD | Several Code Samples
@@ -74,11 +84,3 @@ highlight_theme: darkula
 * [ReDoc](.//redoc/index.html) HTML | Several Code Samples
 
 * [Raw(yaml)](.//openapi.yaml)
-
-## PLAY ENGINE API
-
-* [Shins](./play-engine/slate/index.html) Slate/MD | Several Code Samples
-
-* [AsyncApi Playground](https://playground.asyncapi.io/?url=https://online-bridge-hackathon.github.io/data-formats/play-engine/asyncapi.yaml) Editor | Generators | Pub/Sub viewer
-
-* [Raw(yaml)](./play-engine//asyncapi.yaml
