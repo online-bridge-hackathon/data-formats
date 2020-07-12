@@ -13,64 +13,62 @@ highlight_theme: darkula
 
 * Global Bridge App
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at mi vulputate, venenatis mauris in, ullamcorper tortor. Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur eleifend enim a leo luctus fermentum. Vivamus vel ultrices nisl, et fermentum nisi. Etiam pharetra est eget justo venenatis, egestas posuere est malesuada. Aenean viverra bibendum magna, quis ultrices libero eleifend ac. Donec placerat venenatis nisl sed fermentum. In sollicitudin libero non dignissim porta. Phasellus nulla augue, malesuada vel cursus id, pellentesque venenatis est. Nullam tincidunt imperdiet tellus, non feugiat mauris cursus auctor. Mauris a nulla nec mauris accumsan faucibus vel id lectus. Mauris feugiat et justo eget efficitur. Donec congue dui et porta interdum. Ut a ante a lectus aliquet porttitor. Nam ullamcorper vel ex et feugiat.*
-
 ## DDS API
 
-* [Shins](./docs/dds/slate/index.html)
+* [Shins](./dds/slate/index.html)
 
-* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/docs/dds/openapi.yaml)
+* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/dds/openapi.yaml)
 
-* [ReDoc](./docs/dds/redoc/index.html)
+* [ReDoc](./dds/redoc/index.html)
 
-* [Raw(yaml)](./docs/dds/openapi.yaml)
+* [Raw(yaml)](./dds/openapi.yaml)
 
 ## OCR API
 
-* [Shins](./docs/ocr/slate/index.html)
+* [Shins](./ocr/slate/index.html)
 
-* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/docs/ocr/openapi.yaml)
+* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/ocr/openapi.yaml)
 
-* [ReDoc](./docs/ocr/redoc/index.html)
+* [ReDoc](./ocr/redoc/index.html)
 
-* [Raw(yaml)](./docs/ocr/openapi.yaml)
+* [Raw(yaml)](./ocr/openapi.yaml)
 
 ## DEAL API
 
-* [Shins](./docs/deal/slate/index.html)
+* [Shins](./deal/slate/index.html)
 
-* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/docs/deal/openapi.yaml)
+* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/deal/openapi.yaml)
 
-* [ReDoc](./docs/deal/redoc/index.html)
+* [ReDoc](./deal/redoc/index.html)
 
-* [Raw(yaml)](./docs/deal/openapi.yaml)
+* [Raw(yaml)](./deal/openapi.yaml)
 
 ## DATA CONVERTER API
 
-* [Shins](./docs/data-converter/slate/index.html)
+* [Shins](./data-converter/slate/index.html)
 
-* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/docs/data-converter/openapi.yaml)
+* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/data-converter/openapi.yaml)
 
-* [ReDoc](./docs/data-converter/redoc/index.html)
+* [ReDoc](./data-converter/redoc/index.html)
 
-* [Raw(yaml)](./data-converter/dds/openapi.yaml)
+* [Raw(yaml)](./data-converter/openapi.yaml)
 
 ## API KEYS
 
-* [Shins](./docs//slate/index.html)
+* [Shins](.//slate/index.html)
 
 * [Swagger](https://editor.swagger.io/?url=)
 
-* [ReDoc](./docs//redoc/index.html)
+* [ReDoc](.//redoc/index.html)
 
-* [Raw(yaml)](./docs//openapi.yaml)
+* [Raw(yaml)](.//openapi.yaml)
 
 ## PLAY ENGINE API
 
-* [Shins](./docs//slate/index.html)
+* [Shins](.//slate/index.html)
 
 * [Swagger](https://editor.swagger.io/?url=)
 
-* [ReDoc](./docs//redoc/index.html)
+* [ReDoc](.//redoc/index.html)
 
-* [Raw(yaml)](./docs//openapi.yaml)
+* [Raw(yaml)](.//openapi.yaml)
