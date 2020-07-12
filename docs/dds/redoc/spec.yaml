@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
   x-logo:
-    url: logo.png
+    url: 'https://online-bridge-hackathon.github.io/data-formats/logo.png'
     backgroundColor: '#FFFFFF'
     altText: DDS LOGO
   description: >
@@ -51,8 +51,8 @@ externalDocs:
   description: Full spec
   url: openapi.yaml
 servers:
-  - description: dev
-    url: 'https://dds.hackathon.globalbridge.app/'
+  - description: prod
+    url: 'https://dds.prod.globalbridge.app/api/dds-table/'
 tags:
   - name: DDS
     description: DDS Api
@@ -235,16 +235,6 @@ paths:
       requestBody: *ref_8
       tags:
         - DDS
-      x-codeSamples:
-        - lang: curl
-          source: >
-            curl --header "Content-Type: application/json\" --request POST
-            --data '{"hands":{"S":["D3", "C6", "DT", "D8", "DJ", "D6", "CA",
-            "C3", "S2", "C2", "C4", "S9", "S7"],"W":["DA", "S4", "HT", "C5",
-            "D4", "D7", "S6", "S3", "DK", "CT", "D2", "SK","H8"],"N":["C7",
-            "H6", "H7", "H9", "CJ", "SA", "S8", "SQ", "D5", "S5", "HK", "C8",
-            "HA"],"E":["H2", "H5", "CQ", "D9", "H4", "ST", "HQ", "SJ", "HJ",
-            "DQ", "H3", "C9", "CK"]}}' https://dds.hackathon.globalbridge.app/
       x-code-samples:
         - lang: Node + Request
           source: |
@@ -252,7 +242,7 @@ paths:
 
             var options = {
               method: 'POST',
-              url: 'https://dds.hackathon.globalbridge.app//api/dds-table',
+              url: 'https://dds.prod.globalbridge.app/api/dds-table//api/dds-table',
               headers: {'content-type': 'application/json'},
               body: {hands: {N: ['string'], S: ['string'], E: ['string'], W: ['string']}},
               json: true
@@ -266,7 +256,7 @@ paths:
         - lang: Shell + Curl
           source: |-
             curl --request POST \
-              --url https://dds.hackathon.globalbridge.app//api/dds-table \
+              --url https://dds.prod.globalbridge.app/api/dds-table//api/dds-table \
               --header 'content-type: application/json' \
               --data '{"hands":{"N":["string"],"S":["string"],"E":["string"],"W":["string"]}}'
         - lang: Shell + Httpie
@@ -274,14 +264,14 @@ paths:
             echo
             '{"hands":{"N":["string"],"S":["string"],"E":["string"],"W":["string"]}}'
             |  \
-              http POST https://dds.hackathon.globalbridge.app//api/dds-table \
+              http POST https://dds.prod.globalbridge.app/api/dds-table//api/dds-table \
               content-type:application/json
         - lang: Python + Python3
           source: >-
             import http.client
 
 
-            conn = http.client.HTTPSConnection("dds.hackathon.globalbridge.app")
+            conn = http.client.HTTPSConnection("dds.prod.globalbridge.app")
 
 
             payload =
@@ -291,7 +281,8 @@ paths:
             headers = { 'content-type': "application/json" }
 
 
-            conn.request("POST", "//api/dds-table", payload, headers)
+            conn.request("POST", "/api/dds-table//api/dds-table", payload,
+            headers)
 
 
             res = conn.getresponse()
@@ -308,7 +299,7 @@ paths:
             curl_easy_setopt(hnd, CURLOPT_CUSTOMREQUEST, "POST");
 
             curl_easy_setopt(hnd, CURLOPT_URL,
-            "https://dds.hackathon.globalbridge.app//api/dds-table");
+            "https://dds.prod.globalbridge.app/api/dds-table//api/dds-table");
 
 
             struct curl_slist *headers = NULL;
@@ -327,7 +318,7 @@ paths:
         - lang: Java + Unirest
           source: >-
             HttpResponse<String> response =
-            Unirest.post("https://dds.hackathon.globalbridge.app//api/dds-table")
+            Unirest.post("https://dds.prod.globalbridge.app/api/dds-table//api/dds-table")
               .header("content-type", "application/json")
               .body("{\"hands\":{\"N\":[\"string\"],\"S\":[\"string\"],\"E\":[\"string\"],\"W\":[\"string\"]}}")
               .asString();
@@ -364,7 +355,7 @@ paths:
 
 
             xhr.open("POST",
-            "https://dds.hackathon.globalbridge.app//api/dds-table");
+            "https://dds.prod.globalbridge.app/api/dds-table//api/dds-table");
 
             xhr.setRequestHeader("content-type", "application/json");
 

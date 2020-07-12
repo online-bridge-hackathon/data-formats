@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
   x-logo:
-    url: ../logo.png
+    url: 'https://online-bridge-hackathon.github.io/data-formats/logo.png'
     backgroundColor: '#FFFFFF'
     altText: LOGO
   description: >
@@ -206,10 +206,6 @@ paths:
       requestBody: *ref_9
       tags:
         - Convertion
-      x-codeSamples:
-        - lang: curl
-          source: |
-            curl --header
       x-code-samples:
         - lang: Node + Request
           source: |

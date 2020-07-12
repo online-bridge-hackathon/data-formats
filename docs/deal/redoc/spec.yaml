@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
   x-logo:
-    url: logo.png
+    url: 'https://online-bridge-hackathon.github.io/data-formats/logo.png'
     backgroundColor: '#FFFFFF'
     altText: LOGO
   description: >
@@ -46,7 +46,7 @@ externalDocs:
   url: openapi.yaml
 servers:
   - description: dev
-    url: 'https://.hackathon.globalbridge.app/'
+    url: 'https://deal.prod.globalbridge.app/api/'
 tags:
   - name: Deal
     description: Deal related operations
@@ -209,12 +209,6 @@ paths:
       summary: Returns an array of bridge hands
       tags:
         - Deal
-      x-codeSamples:
-        - lang: curl
-          source: ''
-          curl --header "Content-Type: >-
-            application/json\" --request GET
-            https://.hackathon.globalbridge.app/
       x-code-samples:
         - lang: Node + Request
           source: |
@@ -222,7 +216,7 @@ paths:
 
             var options = {
               method: 'GET',
-              url: 'https://.hackathon.globalbridge.app//api/deal',
+              url: 'https://deal.prod.globalbridge.app/api//api/deal',
               qs: {
                 seed: 'SOME_STRING_VALUE',
                 session: 'SOME_INTEGER_VALUE',
@@ -240,21 +234,21 @@ paths:
         - lang: Shell + Curl
           source: |-
             curl --request GET \
-              --url 'https://.hackathon.globalbridge.app//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE'
+              --url 'https://deal.prod.globalbridge.app/api//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE'
         - lang: Shell + Httpie
           source: >-
             http GET
-            'https://.hackathon.globalbridge.app//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE'
+            'https://deal.prod.globalbridge.app/api//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE'
         - lang: Python + Python3
           source: >-
             import http.client
 
 
-            conn = http.client.HTTPSConnection(".hackathon.globalbridge.app")
+            conn = http.client.HTTPSConnection("deal.prod.globalbridge.app")
 
 
             conn.request("GET",
-            "//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE")
+            "/api//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE")
 
 
             res = conn.getresponse()
@@ -271,14 +265,14 @@ paths:
             curl_easy_setopt(hnd, CURLOPT_CUSTOMREQUEST, "GET");
 
             curl_easy_setopt(hnd, CURLOPT_URL,
-            "https://.hackathon.globalbridge.app//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE");
+            "https://deal.prod.globalbridge.app/api//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE");
 
 
             CURLcode ret = curl_easy_perform(hnd);
         - lang: Java + Unirest
           source: >-
             HttpResponse<String> response =
-            Unirest.get("https://.hackathon.globalbridge.app//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE")
+            Unirest.get("https://deal.prod.globalbridge.app/api//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE")
               .asString();
         - lang: Javascript + Xhr
           source: >-
@@ -298,7 +292,7 @@ paths:
 
 
             xhr.open("GET",
-            "https://.hackathon.globalbridge.app//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE");
+            "https://deal.prod.globalbridge.app/api//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE");
 
 
             xhr.send(data);

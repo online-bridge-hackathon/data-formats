@@ -9,66 +9,67 @@ highlight_theme: darkula
 ---
 
 # Global Bridge App Api Portal
-
+*Lorem ipsum dolor sit amet, consectetur adipiscing elit.*
 
 * Global Bridge App
+*Lorem ipsum dolor sit amet, consectetur adipiscing elit.*
 
 ## DDS API
 
-* [Shins](./dds/slate/index.html)
+* [Shins](./dds/slate/index.html) Slate/MD | Several Code Samples
 
-* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/dds/openapi.yaml)
+* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/dds/openapi.yaml) Editor | TryOut Live feature | Generators
 
-* [ReDoc](./dds/redoc/index.html)
+* [ReDoc](./dds/redoc/index.html) HTML | Several Code Samples
 
 * [Raw(yaml)](./dds/openapi.yaml)
 
 ## OCR API
 
-* [Shins](./ocr/slate/index.html)
+* [Shins](./ocr/slate/index.html) Slate/MD | Several Code Samples
 
-* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/ocr/openapi.yaml)
+* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/ocr/openapi.yaml) Editor | TryOut Live feature  | Generators
 
-* [ReDoc](./ocr/redoc/index.html)
+* [ReDoc](./ocr/redoc/index.html) HTML | Several Code Samples
 
 * [Raw(yaml)](./ocr/openapi.yaml)
 
 ## DEAL API
 
-* [Shins](./deal/slate/index.html)
+* [Shins](./deal/slate/index.html) Slate/MD, Several Code Samples
 
-* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/deal/openapi.yaml)
+* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/deal/openapi.yaml) Editor | TryOut Live feature | Generators
 
-* [ReDoc](./deal/redoc/index.html)
+* [ReDoc](./deal/redoc/index.html) HTML | Several Code Samples
 
 * [Raw(yaml)](./deal/openapi.yaml)
 
 ## DATA CONVERTER API
 
-* [Shins](./data-converter/slate/index.html)
+* [Shins](./data-converter/slate/index.html) Slate/MD, Several Code Samples
 
-* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/data-converter/openapi.yaml)
+* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/data-converter/openapi.yaml) Editor | TryOut Live feature | Generators
 
-* [ReDoc](./data-converter/redoc/index.html)
+* [ReDoc](./data-converter/redoc/index.html) HTML | Several Code Samples
 
 * [Raw(yaml)](./data-converter/openapi.yaml)
 
 ## API KEYS
+ 
+* [Shins](.//slate/index.html) Slate/MD | Several Code Samples
 
-* [Shins](.//slate/index.html)
+* [Swagger](https://editor.swagger.io/?url=) Editor | TryOut Live feature | Generators
 
-* [Swagger](https://editor.swagger.io/?url=)
-
-* [ReDoc](.//redoc/index.html)
+* [ReDoc](.//redoc/index.html) HTML | Several Code Samples
 
 * [Raw(yaml)](.//openapi.yaml)
 
 ## PLAY ENGINE API
 
-* [Shins](.//slate/index.html)
+* [Shins](.//slate/index.html) Slate/MD | Several Code Samples
 
-* [Swagger](https://editor.swagger.io/?url=)
+* [Swagger](https://editor.swagger.io/?url=) Editor | TryOut Live feature | Generators
 
-* [ReDoc](.//redoc/index.html)
+* [ReDoc](.//redoc/index.html) HTML | Several Code Samples
 
 * [Raw(yaml)](.//openapi.yaml)

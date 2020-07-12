@@ -7,7 +7,7 @@ const genDocs = require('../lib/genDocs')
 const shins = require('../lib/shins')
 const DOCS_FOLDER = path.join(__dirname, `../../docs/`)
 const MAIN_INDEX_TEMPLATE = path.join(__dirname, `../templates/readme.html.md`)
-const MAIN_INDEX_FILE = './docs/index.html'
+const MAIN_INDEX_FILE = path.join(DOCS_FOLDER, `index.html`)
 const FS_FORMAT = 'utf-8'
 
 const argv = require('yargs')

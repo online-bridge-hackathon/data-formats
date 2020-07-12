@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
   x-logo:
-    url: logo.png
+    url: 'https://online-bridge-hackathon.github.io/data-formats/logo.png'
     backgroundColor: '#FFFFFF'
     altText: OCR LOGO
   description: >
