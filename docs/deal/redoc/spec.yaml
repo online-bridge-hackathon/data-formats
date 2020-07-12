@@ -1,0 +1,304 @@
+openapi: 3.0.2
+info:
+  x-logo:
+    url: logo.png
+    backgroundColor: '#FFFFFF'
+    altText: LOGO
+  description: >
+    # Introduction
+
+    A web service that accepts request by APIs and returns 1+ bridge deals
+
+
+    # OpenAPI Specification
+
+    This API is documented in **OpenAPI format**
+
+
+    # Cross-Origin Resource Sharing
+
+    This API features Cross-Origin Resource Sharing (CORS) implemented in
+    compliance with  [W3C spec](https://www.w3.org/TR/cors/).
+
+    And that allows cross-domain communication from the browser.
+
+    All responses have a wildcard same-origin which makes them completely public
+    and accessible to everyone, including any code on any site.
+
+
+    # Authentication
+
+
+    Forms of authentication:
+      - API Key
+  title: Deal
+  version: 0.0.1
+  termsOfService: 'http://example.com/terms/'
+  contact:
+    name: API Support
+    email: support@example.com
+    url: 'http://example.com/support'
+  license:
+    name: MIT
+    url: 'https://opensource.org/licenses/MIT'
+externalDocs:
+  description: Full Spec
+  url: openapi.yaml
+servers:
+  - description: dev
+    url: 'https://.hackathon.globalbridge.app/'
+tags:
+  - name: Deal
+    description: Deal related operations
+components:
+  parameters:
+    seed: &ref_3
+      description: Seed
+      in: query
+      name: seed
+      schema:
+        format: byte
+        type: string
+      x-widdershins-oldRef: '#/components/parameters/seed'
+      exampleValues:
+        object: string
+        json: '''string'''
+      required: false
+      originalType: string
+      safeType: string(byte)
+      shortDesc: Seed
+      style: form
+    session: &ref_4
+      description: Session number
+      in: query
+      name: session
+      schema:
+        default: 1
+        type: integer
+      x-widdershins-oldRef: '#/components/parameters/session'
+      exampleValues:
+        object: 1
+        json: '''1'''
+      required: false
+      originalType: integer
+      safeType: integer
+      shortDesc: Session number
+      style: form
+    event: &ref_5
+      description: Event number
+      in: query
+      name: event
+      schema:
+        default: 1
+        type: integer
+      x-widdershins-oldRef: '#/components/parameters/event'
+      exampleValues:
+        object: 1
+        json: '''1'''
+      required: false
+      originalType: integer
+      safeType: integer
+      shortDesc: Event number
+      style: form
+    firstBoard: &ref_6
+      description: First board number
+      in: query
+      name: firstBoard
+      schema:
+        default: 1
+        type: integer
+      x-widdershins-oldRef: '#/components/parameters/firstBoard'
+      exampleValues:
+        object: 1
+        json: '''1'''
+      required: false
+      originalType: integer
+      safeType: integer
+      shortDesc: First board number
+      style: form
+    numberOfBoards: &ref_7
+      description: Number of Boards
+      in: query
+      name: numberOfBoards
+      schema:
+        default: 32
+        type: integer
+      x-widdershins-oldRef: '#/components/parameters/numberOfBoards'
+      exampleValues:
+        object: 32
+        json: '''32'''
+      required: false
+      originalType: integer
+      safeType: integer
+      shortDesc: Number of Boards
+      style: form
+  responses:
+    Default: &ref_10
+      description: Unexpected Error
+      content:
+        application/json:
+          schema: &ref_0
+            description: Default Error Response Container
+            properties:
+              code:
+                format: int32
+                type: integer
+              message:
+                type: string
+            required:
+              - code
+              - message
+            type: object
+            x-widdershins-oldRef: '#/components/schemas/Error'
+      x-widdershins-oldRef: '#/components/responses/Default'
+    NotFound: &ref_9
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema: *ref_0
+      x-widdershins-oldRef: '#/components/responses/NotFound'
+    Success:
+      description: Success
+      content:
+        application/json:
+          schema: &ref_1
+            description: Success
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+            required:
+              - code
+              - message
+            type: object
+            x-widdershins-oldRef: '#/components/schemas/Success'
+    BoardList: &ref_8
+      description: Board List response
+      content:
+        application/json:
+          schema: &ref_2
+            description: 'Board array, uuid hands'
+            properties:
+              boards:
+                type: array
+                items:
+                  type: string
+                  format: uuid
+            x-widdershins-oldRef: '#/components/schemas/BoardList'
+      x-widdershins-oldRef: '#/components/responses/BoardList'
+  schemas:
+    Error: *ref_0
+    Success: *ref_1
+    BoardList: *ref_2
+paths:
+  /api/deal:
+    get:
+      operationId: getDeal
+      parameters:
+        - *ref_3
+        - *ref_4
+        - *ref_5
+        - *ref_6
+        - *ref_7
+      responses:
+        '200': *ref_8
+        '400': *ref_9
+        '500': *ref_10
+        default: *ref_10
+      summary: Returns an array of bridge hands
+      tags:
+        - Deal
+      x-codeSamples:
+        - lang: curl
+          source: ''
+          curl --header "Content-Type: >-
+            application/json\" --request GET
+            https://.hackathon.globalbridge.app/
+      x-code-samples:
+        - lang: Node + Request
+          source: |
+            var request = require("request");
+
+            var options = {
+              method: 'GET',
+              url: 'https://.hackathon.globalbridge.app//api/deal',
+              qs: {
+                seed: 'SOME_STRING_VALUE',
+                session: 'SOME_INTEGER_VALUE',
+                event: 'SOME_INTEGER_VALUE',
+                firstBoard: 'SOME_INTEGER_VALUE',
+                numberOfBoards: 'SOME_INTEGER_VALUE'
+              }
+            };
+
+            request(options, function (error, response, body) {
+              if (error) throw new Error(error);
+
+              console.log(body);
+            });
+        - lang: Shell + Curl
+          source: |-
+            curl --request GET \
+              --url 'https://.hackathon.globalbridge.app//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE'
+        - lang: Shell + Httpie
+          source: >-
+            http GET
+            'https://.hackathon.globalbridge.app//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE'
+        - lang: Python + Python3
+          source: >-
+            import http.client
+
+
+            conn = http.client.HTTPSConnection(".hackathon.globalbridge.app")
+
+
+            conn.request("GET",
+            "//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE")
+
+
+            res = conn.getresponse()
+
+            data = res.read()
+
+
+            print(data.decode("utf-8"))
+        - lang: C + Libcurl
+          source: >-
+            CURL *hnd = curl_easy_init();
+
+
+            curl_easy_setopt(hnd, CURLOPT_CUSTOMREQUEST, "GET");
+
+            curl_easy_setopt(hnd, CURLOPT_URL,
+            "https://.hackathon.globalbridge.app//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE");
+
+
+            CURLcode ret = curl_easy_perform(hnd);
+        - lang: Java + Unirest
+          source: >-
+            HttpResponse<String> response =
+            Unirest.get("https://.hackathon.globalbridge.app//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE")
+              .asString();
+        - lang: Javascript + Xhr
+          source: >-
+            var data = null;
+
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.withCredentials = true;
+
+
+            xhr.addEventListener("readystatechange", function () {
+              if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+              }
+            });
+
+
+            xhr.open("GET",
+            "https://.hackathon.globalbridge.app//api/deal?seed=SOME_STRING_VALUE&session=SOME_INTEGER_VALUE&event=SOME_INTEGER_VALUE&firstBoard=SOME_INTEGER_VALUE&numberOfBoards=SOME_INTEGER_VALUE");
+
+
+            xhr.send(data);
