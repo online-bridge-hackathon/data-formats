@@ -52,7 +52,7 @@ externalDocs:
   url: openapi.yaml
 servers:
   - description: prod
-    url: 'https://dds.prod.globalbridge.app/api/dds-table/'
+    url: 'https://dds.prod.globalbridge.app/'
 tags:
   - name: DDS
     description: DDS Api
@@ -242,7 +242,7 @@ paths:
 
             var options = {
               method: 'POST',
-              url: 'https://dds.prod.globalbridge.app/api/dds-table//api/dds-table',
+              url: 'https://dds.prod.globalbridge.app//api/dds-table',
               headers: {'content-type': 'application/json'},
               body: {hands: {N: ['string'], S: ['string'], E: ['string'], W: ['string']}},
               json: true
@@ -256,7 +256,7 @@ paths:
         - lang: Shell + Curl
           source: |-
             curl --request POST \
-              --url https://dds.prod.globalbridge.app/api/dds-table//api/dds-table \
+              --url https://dds.prod.globalbridge.app//api/dds-table \
               --header 'content-type: application/json' \
               --data '{"hands":{"N":["string"],"S":["string"],"E":["string"],"W":["string"]}}'
         - lang: Shell + Httpie
@@ -264,7 +264,7 @@ paths:
             echo
             '{"hands":{"N":["string"],"S":["string"],"E":["string"],"W":["string"]}}'
             |  \
-              http POST https://dds.prod.globalbridge.app/api/dds-table//api/dds-table \
+              http POST https://dds.prod.globalbridge.app//api/dds-table \
               content-type:application/json
         - lang: Python + Python3
           source: >-
@@ -281,8 +281,7 @@ paths:
             headers = { 'content-type': "application/json" }
 
 
-            conn.request("POST", "/api/dds-table//api/dds-table", payload,
-            headers)
+            conn.request("POST", "//api/dds-table", payload, headers)
 
 
             res = conn.getresponse()
@@ -299,7 +298,7 @@ paths:
             curl_easy_setopt(hnd, CURLOPT_CUSTOMREQUEST, "POST");
 
             curl_easy_setopt(hnd, CURLOPT_URL,
-            "https://dds.prod.globalbridge.app/api/dds-table//api/dds-table");
+            "https://dds.prod.globalbridge.app//api/dds-table");
 
 
             struct curl_slist *headers = NULL;
@@ -318,7 +317,7 @@ paths:
         - lang: Java + Unirest
           source: >-
             HttpResponse<String> response =
-            Unirest.post("https://dds.prod.globalbridge.app/api/dds-table//api/dds-table")
+            Unirest.post("https://dds.prod.globalbridge.app//api/dds-table")
               .header("content-type", "application/json")
               .body("{\"hands\":{\"N\":[\"string\"],\"S\":[\"string\"],\"E\":[\"string\"],\"W\":[\"string\"]}}")
               .asString();
@@ -355,7 +354,7 @@ paths:
 
 
             xhr.open("POST",
-            "https://dds.prod.globalbridge.app/api/dds-table//api/dds-table");
+            "https://dds.prod.globalbridge.app//api/dds-table");
 
             xhr.setRequestHeader("content-type", "application/json");
 
