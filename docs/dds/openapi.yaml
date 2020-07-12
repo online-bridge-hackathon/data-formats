@@ -38,7 +38,7 @@ externalDocs:
   url: openapi.yaml
 servers:
   - description: prod
-    url: https://dds.prod.globalbridge.app/api/dds-table/
+    url: https://dds.prod.globalbridge.app/
 tags:
   - name: DDS
     description: DDS Api

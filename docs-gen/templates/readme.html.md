@@ -9,9 +9,20 @@ highlight_theme: darkula
 ---
 
 # Global Bridge App Api Portal
+
+```markdown
+*Lorem ipsum dolor sit amet, consectetur adipiscing elit.*
+```
+```json
+{
+  "json": "format"
+}
+```
+
 *Lorem ipsum dolor sit amet, consectetur adipiscing elit.*
 
 * Global Bridge App
+
 *Lorem ipsum dolor sit amet, consectetur adipiscing elit.*
 
 ## DDS API
@@ -66,10 +77,8 @@ highlight_theme: darkula
 
 ## PLAY ENGINE API
 
-* [Shins](.//slate/index.html) Slate/MD | Several Code Samples
+* [Shins](./play-engine/slate/index.html) Slate/MD | Several Code Samples
 
-* [Swagger](https://editor.swagger.io/?url=) Editor | TryOut Live feature | Generators
+* [AsyncApi Playground](https://playground.asyncapi.io/?url=https://online-bridge-hackathon.github.io/data-formats/play-engine/asyncapi.yaml) Editor | Generators | Pub/Sub viewer
 
-* [ReDoc](.//redoc/index.html) HTML | Several Code Samples
-
-* [Raw(yaml)](.//openapi.yaml)
+* [Raw(yaml)](./play-engine//asyncapi.yaml
