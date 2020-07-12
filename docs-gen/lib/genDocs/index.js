@@ -15,8 +15,7 @@ module.exports = proj =>
 /** Load Spec */
   loadSpec(proj)
   /** Convert to Markdown; Get Code Snippets */
-    .then(spec => 
-      Promise.all([widdershins(spec).then(shins), openApiSnippet(spec)]))
+    .then(spec => Promise.all([widdershins(spec).then(shins), openApiSnippet(spec)]))
   /** Write Output */
     .then(([shinsHTML, enrichedSpec]) => Promise.all(
       [
