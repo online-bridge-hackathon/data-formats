@@ -1,16 +1,59 @@
-# [GitHub Pages](https://online-bridge-hackathon.github.io/data-formats/)
+## DDS API
 
-## API Specs (OpenApi 3 Standards)
+* [Shins](./docs/dds/slate/index.html)
 
+* [Swagger](http://petstore.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/docs/dds/openapi.yaml)
 
-* [DDS](https://online-bridge-hackathon.github.io/data-formats/docs/dds/ "DDS API")
+* [ReDoc](./docs/dds/redoc/index.html)
 
-* [OCR](https://online-bridge-hackathon.github.io/data-formats/docs/ocr/ "OCR API")
+* [Raw(yaml)](./docs/dds/openapi.yaml)
 
-* [DEAL](https://online-bridge-hackathon.github.io/data-formats/docs/deal/ "DEAL API")
+## OCR API
 
-* [DATA CONVERTER](https://online-bridge-hackathon.github.io/data-formats/docs/data-converter/ "DATA CONVERTER API")
+* [Shins](./docs/ocr/slate/index.html)
 
-* "API KEYS"
+* [Swagger](http://petstore.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/docs/ocr/openapi.yaml)
 
-* "PLAY ENGINE API"
+* [ReDoc](./docs/ocr/redoc/index.html)
+
+* [Raw(yaml)](./docs/ocr/openapi.yaml)
+
+## DEAL API
+
+* [Shins](./docs/deal/slate/index.html)
+
+* [Swagger](http://petstore.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/docs/deal/openapi.yaml)
+
+* [ReDoc](./docs/deal/redoc/index.html)
+
+* [Raw(yaml)](./docs/deal/openapi.yaml)
+
+## DATA CONVERTER API
+
+* [Shins](./docs/data-converter/slate/index.html)
+
+* [Swagger](http://petstore.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/docs/data-converter/openapi.yaml)
+
+* [ReDoc](./docs/data-converter/redoc/index.html)
+
+* [Raw(yaml)](./data-converter/dds/openapi.yaml)
+
+## API KEYS
+
+* [Shins](./docs//slate/index.html)
+
+* [Swagger](http://petstore.swagger.io/?url=)
+
+* [ReDoc](./docs//redoc/index.html)
+
+* [Raw(yaml)](./docs//openapi.yaml)
+
+## PLAY ENGINE API
+
+* [Shins](./docs//slate/index.html)
+
+* [Swagger](http://petstore.swagger.io/?url=)
+
+* [ReDoc](./docs//redoc/index.html)
+
+* [Raw(yaml)](./docs//openapi.yaml)
