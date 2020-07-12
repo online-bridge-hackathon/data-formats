@@ -1,59 +1,40 @@
-## DDS API
+## Documentation 
+# [API Documentation Page](https://online-bridge-hackathon.github.io/data-formats/) 
 
-* [Shins](./docs/dds/slate/index.html)
+* * *
+##### ![Global Bridge App](docs/logo.png)
+@online-bridge-hackathon/data-formats
+* * *
 
-* [Swagger](http://petstore.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/docs/dds/openapi.yaml)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-* [ReDoc](./docs/dds/redoc/index.html)
+* * *
 
-* [Raw(yaml)](./docs/dds/openapi.yaml)
+## Installation and Setup
 
-## OCR API
+### - PACKAGES
 
-* [Shins](./docs/ocr/slate/index.html)
+    npm install
 
-* [Swagger](http://petstore.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/docs/ocr/openapi.yaml)
+## Usage
 
-* [ReDoc](./docs/ocr/redoc/index.html)
+## CLI
 
-* [Raw(yaml)](./docs/ocr/openapi.yaml)
+* * *
 
-## DEAL API
+## Tests
 
-* [Shins](./docs/deal/slate/index.html)
 
-* [Swagger](http://petstore.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/docs/deal/openapi.yaml)
+* * *
 
-* [ReDoc](./docs/deal/redoc/index.html)
+## Team
 
-* [Raw(yaml)](./docs/deal/openapi.yaml)
 
-## DATA CONVERTER API
+* * *
 
-* [Shins](./docs/data-converter/slate/index.html)
+## License
 
-* [Swagger](http://petstore.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/docs/data-converter/openapi.yaml)
+MIT
 
-* [ReDoc](./docs/data-converter/redoc/index.html)
+* * *
 
-* [Raw(yaml)](./data-converter/dds/openapi.yaml)
-
-## API KEYS
-
-* [Shins](./docs//slate/index.html)
-
-* [Swagger](http://petstore.swagger.io/?url=)
-
-* [ReDoc](./docs//redoc/index.html)
-
-* [Raw(yaml)](./docs//openapi.yaml)
-
-## PLAY ENGINE API
-
-* [Shins](./docs//slate/index.html)
-
-* [Swagger](http://petstore.swagger.io/?url=)
-
-* [ReDoc](./docs//redoc/index.html)
-
-* [Raw(yaml)](./docs//openapi.yaml)

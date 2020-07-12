@@ -1,0 +1,331 @@
+openapi: 3.0.2
+info:
+  x-logo:
+    url: ../logo.png
+    backgroundColor: '#FFFFFF'
+    altText: LOGO
+  description: >
+    # Introduction
+
+    An api that accepts a deal in one format and returns another
+
+
+    # OpenAPI Specification
+
+    This API is documented in **OpenAPI format**
+
+
+    # Cross-Origin Resource Sharing
+
+    This API features Cross-Origin Resource Sharing (CORS) implemented in
+    compliance with  [W3C spec](https://www.w3.org/TR/cors/).
+
+    And that allows cross-domain communication from the browser.
+
+    All responses have a wildcard same-origin which makes them completely public
+    and accessible to everyone, including any code on any site.
+
+
+    # Authentication
+
+
+    Forms of authentication:
+      - API Key
+  title: Data Converter
+  version: 0.0.1
+  termsOfService: 'http://example.com/terms/'
+  contact:
+    name: API Support
+    email: support@example.com
+    url: 'http://example.com/support'
+  license:
+    name: MIT
+    url: 'https://opensource.org/licenses/MIT'
+externalDocs:
+  description: Full spec
+  url: openapi.yaml
+servers:
+  - description: dev
+    url: 'https://.hackathon.globalbridge.app/'
+tags:
+  - name: Convertion
+    description: Convertion
+components:
+  parameters:
+    from: &ref_3
+      required: true
+      description: 'From(input) format (JSON, PBN, LIN)'
+      in: query
+      name: from
+      schema:
+        type: string
+        default: pbn
+        enum:
+          - json
+          - pbn
+          - lin
+      x-widdershins-oldRef: '#/components/parameters/from'
+      exampleValues:
+        object: pbn
+        json: '''pbn'''
+      originalType: string
+      safeType: string
+      shortDesc: 'From(input) format (JSON, PBN, LIN)'
+      style: form
+    to: &ref_4
+      required: true
+      description: 'To(output) format (JSON, PBN, LIN)'
+      in: query
+      name: to
+      schema:
+        type: string
+        default: json
+        enum:
+          - json
+          - pbn
+          - lin
+      x-widdershins-oldRef: '#/components/parameters/to'
+      exampleValues:
+        object: json
+        json: '''json'''
+      originalType: string
+      safeType: string
+      shortDesc: 'To(output) format (JSON, PBN, LIN)'
+      style: form
+    output: &ref_5
+      required: true
+      description: Output type (JSON/File)
+      in: query
+      name: output
+      schema:
+        type: string
+        default: file
+        enum:
+          - json
+          - file
+      x-widdershins-oldRef: '#/components/parameters/output'
+      exampleValues:
+        object: file
+        json: '''file'''
+      originalType: string
+      safeType: string
+      shortDesc: Output type (JSON/File)
+      style: form
+  responses:
+    Default: &ref_8
+      description: Unexpected Error
+      content:
+        application/json:
+          schema: &ref_0
+            description: Default Error Response Container
+            properties:
+              code:
+                format: int32
+                type: integer
+              message:
+                type: string
+            required:
+              - code
+              - message
+            type: object
+            x-widdershins-oldRef: '#/components/schemas/Error'
+      x-widdershins-oldRef: '#/components/responses/Default'
+    NotFound: &ref_7
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema: *ref_0
+      x-widdershins-oldRef: '#/components/responses/NotFound'
+    Success:
+      description: Success
+      content:
+        application/json:
+          schema: &ref_2
+            description: Success
+            properties:
+              code:
+                type: integer
+              message:
+                type: string
+            required:
+              - code
+              - message
+            type: object
+            x-widdershins-oldRef: '#/components/schemas/Success'
+    BoardList: &ref_6
+      description: Board List response
+      content:
+        text/plain:
+          schema:
+            type: string
+            format: binary
+        application/json:
+          schema: &ref_1
+            description: Board array
+            properties:
+              format:
+                type: string
+                enum:
+                  - json
+                  - pbn
+                  - lin
+              boards:
+                type: array
+                items:
+                  type: string
+            x-widdershins-oldRef: '#/components/schemas/BoardList'
+      x-widdershins-oldRef: '#/components/responses/BoardList'
+  schemas:
+    BoardList: *ref_1
+    Error: *ref_0
+    Success: *ref_2
+  requestBodies:
+    BoardData: &ref_9
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+        application/json:
+          schema: *ref_1
+      x-widdershins-oldRef: '#/components/requestBodies/BoardData'
+paths:
+  /api:
+    put:
+      operationId: putData
+      parameters:
+        - *ref_3
+        - *ref_4
+        - *ref_5
+      responses:
+        '200': *ref_6
+        '400': *ref_7
+        '500': *ref_8
+        default: *ref_8
+      summary: 'Converts a set of boards between different formats (JSON, PBN, LIN...)'
+      requestBody: *ref_9
+      tags:
+        - Convertion
+      x-codeSamples:
+        - lang: curl
+          source: |
+            curl --header
+      x-code-samples:
+        - lang: Node + Request
+          source: |
+            var request = require("request");
+
+            var options = {
+              method: 'PUT',
+              url: 'https://.hackathon.globalbridge.app//api',
+              qs: {
+                from: 'SOME_STRING_VALUE',
+                to: 'SOME_STRING_VALUE',
+                output: 'SOME_STRING_VALUE'
+              },
+              headers: {'content-type': 'application/json'},
+              body: {format: 'json', boards: ['string']},
+              json: true
+            };
+
+            request(options, function (error, response, body) {
+              if (error) throw new Error(error);
+
+              console.log(body);
+            });
+        - lang: Shell + Curl
+          source: |-
+            curl --request PUT \
+              --url 'https://.hackathon.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE' \
+              --header 'content-type: application/json' \
+              --data '{"format":"json","boards":["string"]}'
+        - lang: Shell + Httpie
+          source: |-
+            echo '{"format":"json","boards":["string"]}' |  \
+              http PUT 'https://.hackathon.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE' \
+              content-type:application/json
+        - lang: Python + Python3
+          source: >-
+            import http.client
+
+
+            conn = http.client.HTTPSConnection(".hackathon.globalbridge.app")
+
+
+            payload = "{\"format\":\"json\",\"boards\":[\"string\"]}"
+
+
+            headers = { 'content-type': "application/json" }
+
+
+            conn.request("PUT",
+            "//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE",
+            payload, headers)
+
+
+            res = conn.getresponse()
+
+            data = res.read()
+
+
+            print(data.decode("utf-8"))
+        - lang: C + Libcurl
+          source: >-
+            CURL *hnd = curl_easy_init();
+
+
+            curl_easy_setopt(hnd, CURLOPT_CUSTOMREQUEST, "PUT");
+
+            curl_easy_setopt(hnd, CURLOPT_URL,
+            "https://.hackathon.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE");
+
+
+            struct curl_slist *headers = NULL;
+
+            headers = curl_slist_append(headers, "content-type:
+            application/json");
+
+            curl_easy_setopt(hnd, CURLOPT_HTTPHEADER, headers);
+
+
+            curl_easy_setopt(hnd, CURLOPT_POSTFIELDS,
+            "{\"format\":\"json\",\"boards\":[\"string\"]}");
+
+
+            CURLcode ret = curl_easy_perform(hnd);
+        - lang: Java + Unirest
+          source: >-
+            HttpResponse<String> response =
+            Unirest.put("https://.hackathon.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE")
+              .header("content-type", "application/json")
+              .body("{\"format\":\"json\",\"boards\":[\"string\"]}")
+              .asString();
+        - lang: Javascript + Xhr
+          source: >-
+            var data = JSON.stringify({
+              "format": "json",
+              "boards": [
+                "string"
+              ]
+            });
+
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.withCredentials = true;
+
+
+            xhr.addEventListener("readystatechange", function () {
+              if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+              }
+            });
+
+
+            xhr.open("PUT",
+            "https://.hackathon.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE");
+
+            xhr.setRequestHeader("content-type", "application/json");
+
+
+            xhr.send(data);
