@@ -182,6 +182,13 @@ components:
   requestBodies:
     BoardData: &ref_6
       content:
+        multipart/form-data:
+          schema:
+            type: object
+            properties:
+              file:
+                type: string
+                format: binary
         application/octet-stream:
           schema:
             type: string
