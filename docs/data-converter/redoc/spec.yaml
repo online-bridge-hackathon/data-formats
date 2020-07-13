@@ -45,14 +45,14 @@ externalDocs:
   description: Full spec
   url: openapi.yaml
 servers:
-  - description: dev
-    url: 'https://.hackathon.globalbridge.app/'
+  - description: prod
+    url: 'https://converter.prod.globalbridge.app/'
 tags:
   - name: Convertion
     description: Convertion
 components:
   parameters:
-    from: &ref_3
+    from: &ref_7
       required: true
       description: 'From(input) format (JSON, PBN, LIN)'
       in: query
@@ -72,7 +72,7 @@ components:
       safeType: string
       shortDesc: 'From(input) format (JSON, PBN, LIN)'
       style: form
-    to: &ref_4
+    to: &ref_8
       required: true
       description: 'To(output) format (JSON, PBN, LIN)'
       in: query
@@ -92,7 +92,7 @@ components:
       safeType: string
       shortDesc: 'To(output) format (JSON, PBN, LIN)'
       style: form
-    output: &ref_5
+    output: &ref_9
       required: true
       description: Output type (JSON/File)
       in: query
@@ -112,7 +112,7 @@ components:
       shortDesc: Output type (JSON/File)
       style: form
   responses:
-    Default: &ref_8
+    Default: &ref_5
       description: Unexpected Error
       content:
         application/json:
@@ -130,7 +130,7 @@ components:
             type: object
             x-widdershins-oldRef: '#/components/schemas/Error'
       x-widdershins-oldRef: '#/components/responses/Default'
-    NotFound: &ref_7
+    NotFound: &ref_4
       description: The specified resource was not found
       content:
         application/json:
@@ -152,7 +152,7 @@ components:
               - message
             type: object
             x-widdershins-oldRef: '#/components/schemas/Success'
-    BoardList: &ref_6
+    BoardList: &ref_3
       description: Board List response
       content:
         text/plain:
@@ -180,7 +180,7 @@ components:
     Error: *ref_0
     Success: *ref_2
   requestBodies:
-    BoardData: &ref_9
+    BoardData: &ref_6
       content:
         application/octet-stream:
           schema:
@@ -190,20 +190,145 @@ components:
           schema: *ref_1
       x-widdershins-oldRef: '#/components/requestBodies/BoardData'
 paths:
+  /api/boards/test:
+    post:
+      operationId: postBoardsTest
+      responses:
+        '200': *ref_3
+        '400': *ref_4
+        '500': *ref_5
+        default: *ref_5
+      summary: 'Converts a set of boards between different formats (JSON, PBN, LIN...)'
+      requestBody: *ref_6
+      tags:
+        - Convertion
+      x-code-samples:
+        - lang: Node + Request
+          source: |
+            var request = require("request");
+
+            var options = {
+              method: 'POST',
+              url: 'https://converter.prod.globalbridge.app//api/boards/test',
+              headers: {'content-type': 'application/json'},
+              body: {format: 'json', boards: ['string']},
+              json: true
+            };
+
+            request(options, function (error, response, body) {
+              if (error) throw new Error(error);
+
+              console.log(body);
+            });
+        - lang: Shell + Curl
+          source: |-
+            curl --request POST \
+              --url https://converter.prod.globalbridge.app//api/boards/test \
+              --header 'content-type: application/json' \
+              --data '{"format":"json","boards":["string"]}'
+        - lang: Shell + Httpie
+          source: |-
+            echo '{"format":"json","boards":["string"]}' |  \
+              http POST https://converter.prod.globalbridge.app//api/boards/test \
+              content-type:application/json
+        - lang: Python + Python3
+          source: >-
+            import http.client
+
+
+            conn =
+            http.client.HTTPSConnection("converter.prod.globalbridge.app")
+
+
+            payload = "{\"format\":\"json\",\"boards\":[\"string\"]}"
+
+
+            headers = { 'content-type': "application/json" }
+
+
+            conn.request("POST", "//api/boards/test", payload, headers)
+
+
+            res = conn.getresponse()
+
+            data = res.read()
+
+
+            print(data.decode("utf-8"))
+        - lang: C + Libcurl
+          source: >-
+            CURL *hnd = curl_easy_init();
+
+
+            curl_easy_setopt(hnd, CURLOPT_CUSTOMREQUEST, "POST");
+
+            curl_easy_setopt(hnd, CURLOPT_URL,
+            "https://converter.prod.globalbridge.app//api/boards/test");
+
+
+            struct curl_slist *headers = NULL;
+
+            headers = curl_slist_append(headers, "content-type:
+            application/json");
+
+            curl_easy_setopt(hnd, CURLOPT_HTTPHEADER, headers);
+
+
+            curl_easy_setopt(hnd, CURLOPT_POSTFIELDS,
+            "{\"format\":\"json\",\"boards\":[\"string\"]}");
+
+
+            CURLcode ret = curl_easy_perform(hnd);
+        - lang: Java + Unirest
+          source: >-
+            HttpResponse<String> response =
+            Unirest.post("https://converter.prod.globalbridge.app//api/boards/test")
+              .header("content-type", "application/json")
+              .body("{\"format\":\"json\",\"boards\":[\"string\"]}")
+              .asString();
+        - lang: Javascript + Xhr
+          source: >-
+            var data = JSON.stringify({
+              "format": "json",
+              "boards": [
+                "string"
+              ]
+            });
+
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.withCredentials = true;
+
+
+            xhr.addEventListener("readystatechange", function () {
+              if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+              }
+            });
+
+
+            xhr.open("POST",
+            "https://converter.prod.globalbridge.app//api/boards/test");
+
+            xhr.setRequestHeader("content-type", "application/json");
+
+
+            xhr.send(data);
   /api:
     put:
       operationId: putData
       parameters:
-        - *ref_3
-        - *ref_4
-        - *ref_5
+        - *ref_7
+        - *ref_8
+        - *ref_9
       responses:
-        '200': *ref_6
-        '400': *ref_7
-        '500': *ref_8
-        default: *ref_8
+        '200': *ref_3
+        '400': *ref_4
+        '500': *ref_5
+        default: *ref_5
       summary: 'Converts a set of boards between different formats (JSON, PBN, LIN...)'
-      requestBody: *ref_9
+      requestBody: *ref_6
       tags:
         - Convertion
       x-code-samples:
@@ -213,7 +338,7 @@ paths:
 
             var options = {
               method: 'PUT',
-              url: 'https://.hackathon.globalbridge.app//api',
+              url: 'https://converter.prod.globalbridge.app//api',
               qs: {
                 from: 'SOME_STRING_VALUE',
                 to: 'SOME_STRING_VALUE',
@@ -232,20 +357,21 @@ paths:
         - lang: Shell + Curl
           source: |-
             curl --request PUT \
-              --url 'https://.hackathon.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE' \
+              --url 'https://converter.prod.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE' \
               --header 'content-type: application/json' \
               --data '{"format":"json","boards":["string"]}'
         - lang: Shell + Httpie
           source: |-
             echo '{"format":"json","boards":["string"]}' |  \
-              http PUT 'https://.hackathon.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE' \
+              http PUT 'https://converter.prod.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE' \
               content-type:application/json
         - lang: Python + Python3
           source: >-
             import http.client
 
 
-            conn = http.client.HTTPSConnection(".hackathon.globalbridge.app")
+            conn =
+            http.client.HTTPSConnection("converter.prod.globalbridge.app")
 
 
             payload = "{\"format\":\"json\",\"boards\":[\"string\"]}"
@@ -273,7 +399,7 @@ paths:
             curl_easy_setopt(hnd, CURLOPT_CUSTOMREQUEST, "PUT");
 
             curl_easy_setopt(hnd, CURLOPT_URL,
-            "https://.hackathon.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE");
+            "https://converter.prod.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE");
 
 
             struct curl_slist *headers = NULL;
@@ -292,7 +418,7 @@ paths:
         - lang: Java + Unirest
           source: >-
             HttpResponse<String> response =
-            Unirest.put("https://.hackathon.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE")
+            Unirest.put("https://converter.prod.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE")
               .header("content-type", "application/json")
               .body("{\"format\":\"json\",\"boards\":[\"string\"]}")
               .asString();
@@ -319,7 +445,7 @@ paths:
 
 
             xhr.open("PUT",
-            "https://.hackathon.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE");
+            "https://converter.prod.globalbridge.app//api?from=SOME_STRING_VALUE&to=SOME_STRING_VALUE&output=SOME_STRING_VALUE");
 
             xhr.setRequestHeader("content-type", "application/json");
 
