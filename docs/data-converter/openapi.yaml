@@ -34,8 +34,8 @@ externalDocs:
   description: Full spec
   url: openapi.yaml
 servers:
-  - description: dev
-    url: https://.hackathon.globalbridge.app/
+  - description: prod
+    url: https://converter.prod.globalbridge.app/
 tags:
   - name: Convertion
     description: Convertion
@@ -153,6 +153,23 @@ components:
           schema:
             $ref: "#/components/schemas/BoardList"
 paths:
+  /api/boards/test:
+    post:
+      operationId: postBoardsTest
+      responses:
+        '200':
+           "$ref": "#/components/responses/BoardList"
+        '400':
+          "$ref": "#/components/responses/NotFound"
+        '500':
+          "$ref": "#/components/responses/Default"
+        default:
+          "$ref": "#/components/responses/Default"
+      summary: Converts a set of boards between different formats (JSON, PBN, LIN...)
+      requestBody:
+        $ref: "#/components/requestBodies/BoardData"
+      tags: 
+        - Convertion
   /api:
     put:
       operationId: putData
