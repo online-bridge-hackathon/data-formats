@@ -31,9 +31,23 @@ highlight_theme: darkula
 
 * [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/dds/openapi.yaml) Editor | TryOut Live feature | Generators
 
+* [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/6f7f456b0d3c713e9e9c)
+
 * [ReDoc](./dds/redoc/index.html) HTML | Several Code Samples
 
 * [Raw(yaml)](./dds/openapi.yaml)
+
+## DEAL API
+
+* [Shins](./deal/slate/index.html) Slate/MD, Several Code Samples
+
+* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/deal/openapi.yaml) Editor | TryOut Live feature | Generators
+
+* [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/cb3d59528ca7d1b647e1)
+
+* [ReDoc](./deal/redoc/index.html) HTML | Several Code Samples
+
+* [Raw(yaml)](./deal/openapi.yaml)
 
 ## OCR API
 
@@ -44,16 +58,6 @@ highlight_theme: darkula
 * [ReDoc](./ocr/redoc/index.html) HTML | Several Code Samples
 
 * [Raw(yaml)](./ocr/openapi.yaml)
-
-## DEAL API
-
-* [Shins](./deal/slate/index.html) Slate/MD, Several Code Samples
-
-* [Swagger](https://editor.swagger.io/?url=https://online-bridge-hackathon.github.io/data-formats/deal/openapi.yaml) Editor | TryOut Live feature | Generators
-
-* [ReDoc](./deal/redoc/index.html) HTML | Several Code Samples
-
-* [Raw(yaml)](./deal/openapi.yaml)
 
 ## DATA CONVERTER API
 
@@ -73,7 +77,7 @@ highlight_theme: darkula
 
 * [AsyncApi HTML](./play-engine/html/index.html) HTML
 
-* [Raw(yaml)](./play-engine/asyncapi.yaml
+* [Raw(yaml)](./play-engine/asyncapi.yaml)
 
 ## API KEYS
  

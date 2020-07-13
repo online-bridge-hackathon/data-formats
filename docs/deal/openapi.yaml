@@ -35,7 +35,7 @@ externalDocs:
   url: openapi.yaml
 servers:
   - description: dev
-    url: https://deal.prod.globalbridge.app/api/
+    url: https://deal.prod.globalbridge.app/
 tags:
   - name: Deal
     description: Deal related operations

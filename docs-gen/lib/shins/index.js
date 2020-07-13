@@ -1,4 +1,5 @@
 'use strict'
+
 const shins = require('util').promisify(require('shins').render)
 const path = require('path')
 const LOGO_PATH = path.join(__dirname, '../../../docs/logo.png')
