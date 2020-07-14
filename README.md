@@ -37,19 +37,19 @@ It might be needed to add execution permissions to the bin files:
 
 Generate for a single project
 
-    docgen.js -p [project name]
+    ./docgen.js -p [project name]
 
 Generate for all projects
 
-    docgen.js -a
+    ./docgen.js -a
 
 Generate the main entry page
 
-    docgen.js -m
+    ./docgen.js -m
 
 For further options and help:
 
-     docgen.js -h
+     ./docgen.js -h
 
 * * *
 
