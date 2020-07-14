@@ -11,7 +11,7 @@ highlight_theme: darkula
 # Global Bridge App Api Portal
 
 ```markdown
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit.*
+
 ```
 ```json
 {
@@ -19,11 +19,8 @@ highlight_theme: darkula
 }
 ```
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit.*
-
 * Global Bridge App
 
-*Lorem ipsum dolor sit amet, consectetur adipiscing elit.*
 
 ## DDS API
 

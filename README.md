@@ -13,7 +13,9 @@ For convenience, there's a CLI to auto-generate these docs, along with embeded c
 
 ### - REQUIREMENTS
 
-    NodeJS
+    NodeJS (v12+)
+
+    Move to the /docs-gen folder (cd docs-gen)
 
 ### - PACKAGES
 
@@ -21,7 +23,7 @@ For convenience, there's a CLI to auto-generate these docs, along with embeded c
 
 ### - CLI
 
-Building the Binaries for the CLI will export 1 command, docgen.js that can then be used by the shell
+Building the binaries for the CLI will export 1 command -> docgen.js that can then be used by the shell
 
     npm link
 
