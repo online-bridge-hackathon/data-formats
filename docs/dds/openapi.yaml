@@ -213,7 +213,7 @@ components:
                   W:
                     $ref: "#/components/schemas/Hand"
 paths:
-  /api/dds-table:
+  /api/dds-table/:
     post:
       operationId: postDdsTable
       responses:

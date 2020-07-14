@@ -30,7 +30,7 @@ const argv = require('yargs')
 
 argv.all
   ? Promise.allSettled(fs.readdirSync(DOCS_FOLDER).filter(f => fs.statSync(path.join(DOCS_FOLDER, f)).isDirectory()).map(genDocs))
-    .then(results => results.map(console.info))
+    .then(results => results.map(({status}) => console.info(status)))
     .catch(console.error)
     .finally(() => process.exit())
   : argv.proj ? genDocs(argv.proj)
