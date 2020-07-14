@@ -13,10 +13,8 @@ highlight_theme: darkula
 ```markdown
 
 ```
-```json
-{
-  "json": "format"
-}
+```markdown
+
 ```
 
 * Global Bridge App
