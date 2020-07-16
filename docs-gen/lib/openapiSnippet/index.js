@@ -5,12 +5,12 @@ const TARGETS = ['node_request', 'shell_curl', 'shell_httpie', 'python_python3',
 
 module.exports = openApi => {
   try {
-    for (var path in openApi.paths) {
-      for (var method in openApi.paths[path]) {
-        var generatedCode = OpenAPISnippet.getEndpointSnippets(openApi, path, method, TARGETS)
+    for (const path in openApi.paths) {
+      for (const method in openApi.paths[path]) {
+        const generatedCode = OpenAPISnippet.getEndpointSnippets(openApi, path, method, TARGETS)
         openApi.paths[path][method]['x-code-samples'] = []
-        for (var snippetIdx in generatedCode.snippets) {
-          var snippet = generatedCode.snippets[snippetIdx]
+        for (const snippetIdx in generatedCode.snippets) {
+          const snippet = generatedCode.snippets[snippetIdx]
           openApi.paths[path][method]['x-code-samples'][snippetIdx] = { 'lang': snippet.title, 'source': snippet.content }
         }
       }
