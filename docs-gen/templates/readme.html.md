@@ -70,7 +70,7 @@ highlight_theme: darkula
 
 * [Shins](./play-engine/slate/index.html) Slate/MD | Several Code Samples
 
-* [AsyncApi Playground](https://playground.asyncapi.io?url=https://online-bridge-hackathon.github.io/data-formats/play-engine/asyncapi.yaml) Editor | Generators | Pub/Sub viewer
+* [AsyncApi Playground](https://playground.asyncapi.io?load=https://online-bridge-hackathon.github.io/data-formats/play-engine/asyncapi.yaml) Editor | Generators | Pub/Sub viewer
 
 * [AsyncApi HTML](./play-engine/html/index.html) HTML
 
