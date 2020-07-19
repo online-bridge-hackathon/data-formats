@@ -42,8 +42,8 @@ info:
   license:
     name: MIT
 externalDocs:
-  description: Full spec
-  url: openapi.yaml
+  description: Back to Api Portal
+  url: 'https://online-bridge-hackathon.github.io/data-formats/'
 servers:
   - description: dev
     url: 'http://localhost:8080/'

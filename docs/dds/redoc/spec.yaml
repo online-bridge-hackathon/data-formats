@@ -48,8 +48,8 @@ info:
     name: MIT
     url: 'https://opensource.org/licenses/MIT'
 externalDocs:
-  description: Full spec
-  url: openapi.yaml
+  description: Back to Api Portal
+  url: 'https://online-bridge-hackathon.github.io/data-formats/'
 servers:
   - description: prod
     url: 'https://dds.prod.globalbridge.app/'
