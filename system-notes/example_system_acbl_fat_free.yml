@@ -1,0 +1,429 @@
+---
+format: ACBL
+version: 0.1
+sections:
+  general:
+    fields:
+      title: ACBL Fat Free
+      general_approach: Standard American
+      notes: See https://www.acbl.org/learn_page/how-to-play-bridge/introduction-to-duplicate/convention-cards/
+  no_trump:
+    fields:
+      range_1_nt: 15-17
+      range_2_nt: 20-21
+      range_3_nt: 25-27
+    conventions:
+      - title: Strong 1NT
+        description: 15-17 HCP balanced
+        sequences:
+          - bids: 1n
+            hcp:
+              min: 15
+              max: 17
+            shape: bal
+            announce: 15-17
+          - bids: 1n.2n
+            hcp:
+              min: 8
+              max: 9
+            shape: bal
+            detail: invitational
+          - bids: 1n.2n.p
+            hcp:
+              min: 15
+              max: 16
+          - bids: 1n.2n.3n
+            hcp:
+              min: 16
+              max: 17
+          - bids: 1n.3n
+            hcp:
+              min: 10
+              max: 15
+            shape: bal
+          - bids: 1n.4n
+            hcp:
+              min: 16
+              max: 18
+            shape: bal
+            detail: Quantative invite to slam
+          - bids: 1n.4n.p
+            hcp:
+              min: 15
+              max: 16
+          - bids: 1n.4n.6n
+            hcp:
+              min: 16
+              max: 17
+          - bids: 1n.6n
+            hcp:
+              min: 19
+              max: 21
+            shape: bal
+      - title: 2NT
+        description: 20-21 HCP, balanced
+        sequences: []
+      - title: Stayman
+        description: Shows 4 card major and interest in game
+        sequences:
+          - bids: 1n.2c
+            hcp:
+              min: 8
+            shape: 4 card major, or 5/4 in majors
+            forcing: '1'
+            detail: should have some shortness
+          - bids: 1n.2c.2d
+            shape: no four card major
+          - bids: 1n.2c.2d.2h
+            hcp:
+              min: 8
+              max: 9
+          - bids: 1n.2c.2d.3h
+            hcp:
+              min: 10
+              max: 15
+            shape: 5+ hearts, 4 spades
+          - bids: 1n.2c.2d.3s
+            hcp:
+              min: 10
+              max: 15
+            shape: 4 hearts, 5+ spades
+          - bids: 1n.2c.2d.3n
+            hcp:
+              min: 10
+              max: 15
+          - bids: 1n.2c.2h
+            shape: 4 hearts
+          - bids: 1n.2c.2h.2s
+            hcp:
+              min: 8
+              max: 9
+            shape: 4 hearts, 5 spades
+          - bids: 1n.2c.2h.2n
+            hcp:
+              min: 8
+              max: 9
+            shape: '<4 hearts, 4 spades'
+          - bids: 1n.2c.2h.3h
+            hcp:
+              min: 8
+              max: 9
+            shape: 4-5 hearts
+          - bids: 1n.2c.2h.3s
+            hcp:
+              min: 10
+              max: 15
+            shape: 4 hearts, 5 spades
+          - bids: 1n.2c.2h.3n
+            hcp:
+              min: 10
+              max: 15
+            shape: '<4 hearts, 4 spades'
+          - bids: 1n.2c.2h.4h
+            hcp:
+              min: 10
+              max: 15
+            shape: 4-5 hearts
+          - bids: 1n.2c.2s
+            shape: 4 spades, <4 hearts
+          - bids: 1n.2c.2s.2n
+            hcp:
+              min: 8
+              max: 9
+            shape: 4 hearts, <4 spades
+          - bids: 1n.2c.2s.3h
+            hcp:
+              min: 8
+              max: 9
+            shape: 5 hearts, 4 spades
+          - bids: 1n.2c.2s.3s
+            hcp:
+              min: 10
+              max: 15
+            shape: 4-5 spades
+          - bids: 1n.2c.2s.3n
+            hcp:
+              min: 10
+              max: 15
+            shape: 4 hearts, <4 spades
+          - bids: 1n.2c.2s.4s
+            hcp:
+              min: 10
+              max: 15
+            shape: 4-5 spades
+      - title: Jacoby Transfers
+        description: Shows 5+ card major
+        sequences:
+          - bids: 1n.2d
+            shape: 5+ hearts
+            announce: transfer to hearts
+            forcing: '1'
+          - bids: 1n.2d.2h
+            detail: accept transfer
+          - bids: 1n.2d.2h.p
+            hcp:
+              max: 7
+          - bids: 1n.2d.2h.2n
+            hcp:
+              min: 8
+              max: 9
+            shape: 5 hearts
+          - bids: 1n.2d.2h.3h
+            hcp:
+              min: 8
+              max: 9
+            shape: 6+ hearts
+          - bids: 1n.2d.2h.3n
+            hcp:
+              min: 10
+              max: 15
+            shape: 5 hearts
+          - bids: 1n.2d.2h.4h
+            hcp:
+              min: 10
+              max: 15
+            shape: 6+ hearts
+          - bids: 1n.2d.3h
+            hcp:
+              min: 17
+              max: 17
+            shape: 4+ hearts
+            detail: super accept
+          - bids: 1n.2h
+            shape: 5+ spades
+            announce: transfer to spades
+            forcing: '1'
+          - bids: 1n.2h.2s
+            detail: accept transfer
+          - bids: 1n.2h.2s.p
+            hcp:
+              max: 7
+          - bids: 1n.2h.2s.2n
+            hcp:
+              min: 8
+              max: 9
+            shape: 5 spades
+          - bids: 1n.2h.2s.3h
+            hcp:
+              min: 8
+              max: 9
+            shape: 6+ spades
+          - bids: 1n.2h.2s.3n
+            hcp:
+              min: 10
+              max: 15
+            shape: 5 spades
+          - bids: 1n.2h.2s.4h
+            hcp:
+              min: 10
+              max: 15
+            shape: 6+ spades
+          - bids: 1n.2h.3s
+            hcp:
+              min: 17
+              max: 17
+            shape: 4+ spades
+            detail: super accept
+    notes: ''
+  major_opening:
+    fields:
+      expected_min_length_1st_2nd: '5'
+    conventions:
+      - title: Standard American
+        description: 5 card majors
+        sequences:
+          - bids: 1j
+            hcp:
+              min: 11
+              max: 21
+            shape: 5+ in major suit
+          - bids: 1j.1n
+            hcp:
+              min: '6'
+              max: '10'
+            shape: '< 3 card support'
+          - bids: 1j.2j
+            hcp:
+              min: 6
+              max: 10
+            shape: 3-4 card support
+          - bids: 1j.2n
+            hcp:
+              min: '11'
+              max: '12'
+            shape: '< 3 card support'
+          - bids: 1j.2u
+            hcp:
+              min: '10'
+            shape: Good new suit
+          - bids: 1j.2u.2j
+            hcp:
+              min: '11'
+              max: '14'
+            shape: 6+ cards
+          - bids: 1j.3j
+            hcp:
+              min: 10
+              max: 12
+            shape: 3-4 card support
+            detail: if 3 card support, includes an honor
+          - bids: 1j.3n
+            hcp:
+              min: '13'
+              max: '15'
+            shape: '< 3 card support'
+          - bids: 1j.4j
+            hcp:
+              min: 6
+              max: 10
+            shape: 5 card support
+    notes: ''
+  minor_opening:
+    fields:
+      expected_min_length_clubs: 3+_!c
+      expected_min_length_diamonds: 3+_!d
+      notes: Open 1!d only when 4-4-3-2
+    conventions:
+      - title: Standard American
+        description: ''
+        sequences:
+          - bids: 1m.1n
+            hcp:
+              min: '6'
+              max: '10'
+            shape: balanced, no 4 card major
+          - bids: 1m.2n
+            hcp:
+              min: '11'
+              max: '12'
+            shape: balanced, no 4 card major
+          - bids: 1m.3n
+            hcp:
+              min: '13'
+              max: '15'
+            shape: balanced, no 4 card major
+  two_level_suit_openers:
+    fields:
+      two_club_hcp: 22+
+      two_club_response: 2!d_waiting
+      two_diamond_strength: weak
+      two_diamond_response:
+        - 2!n_forcing
+      two_diamond_hcp: 5-10
+      two_heart_hcp: 5-10
+      two_heart_response:
+        - 2!n_forcing
+      two_spade_hcp: 5-10
+      two_spade_response:
+        - 2!n_forcing
+    conventions:
+      - title: 2!d Waiting
+        description: ''
+        sequences:
+          - bids: 2c.2d
+            hcp:
+              min: '0'
+              max: '7'
+            shape: Could be higher HCP but without a 5 card suit
+          - bids: 2c.2h
+            hcp:
+              min: '8'
+            shape: 5+ !h
+          - bids: 2c.2s
+            hcp:
+              min: '8'
+            shape: 5+ !s
+  preempts:
+    fields:
+      3/4_level_bids: light
+  special_doubles:
+    conventions:
+      - title: Negative double
+        description: Through 3!h
+        sequences:
+          - bids: 1m 1h x
+            hcp:
+              min: '6'
+            shape: 4 !s
+          - bids: 1m 1h 1s
+            hcp:
+              min: '6'
+            shape: 5+ !s
+          - bids: 1m 1s x
+            hcp:
+              min: '6'
+            shape: 4 !h, or 5 but < 10 HCP
+          - bids: 1c 1d x
+            hcp:
+              min: '6'
+            shape: 4 !h and 4 !s
+  simple_overalls:
+    fields:
+      1_level_range: 6+
+      new_suit_response: non-forcing
+  no_trump_overcalls:
+    fields:
+      direct_seat_range: 15-17
+      notes: Systems on
+  slam_conventions:
+    conventions:
+      - title: Blackwood
+        description: Usually used in suit contracts
+        sequences:
+          - bids: 4n.5c
+            shape: 0 or 4 aces
+          - bids: 4n.5d
+            shape: 1 ace
+          - bids: 4n.5h
+            shape: 2 aces
+          - bids: 4n.5s
+            shape: 3 aces
+      - title: Gerber
+        description: Usually used in no trump contracts
+        sequences:
+          - bids: 4c.4d
+            shape: 0 or 4 aces
+          - bids: 4c.4h
+            shape: 1 ace
+          - bids: 4c.4s
+            shape: 2 aces
+          - bids: 4c.4n
+            shape: 3 aces
+  leads:
+    fields:
+      lead_vs_suit_xx: 1
+      lead_vs_suit_xxx: 3
+      lead_vs_suit_AKx: 2
+      lead_vs_suit_KQx: 1
+      lead_vs_suit_QJx: 1
+      lead_vs_suit_JT9: 1
+      lead_vs_suit_KQT9: 1
+      lead_vs_suit_T9x: 1
+      lead_vs_suit_KJTx: 2
+      lead_vs_suit_QT9x: 2
+      lead_vs_suit_xxxx: 4
+      lead_vs_suit_xxxxx: 4
+      lead_vs_nt_xx: 1
+      lead_vs_nt_xxx: 1
+      lead_vs_nt_xxxx: 1
+      lead_vs_nt_xxxxx: 4
+      lead_vs_nt_AKJx: 2
+      lead_vs_nt_AJT9: 2
+      lead_vs_nt_KQJx: 1
+      lead_vs_nt_QJTx: 1
+      lead_vs_nt_JT9x: 1
+      lead_vs_nt_AQJx: 2
+      lead_vs_nt_AT9x: 2
+      lead_vs_nt_KQT9: 2
+      lead_vs_nt_QT9x: 2
+      lead_vs_nt_T9xx: 1
+      length_lead_vs_suits: 4th_best
+      length_lead_vs_no_trump: 4th_best
+      primary_signal_to_partner_lead: attitude
+  defensive_carding:
+    fields:
+      count_vs_suits: standard
+      attitude_vs_suits: standard
+      count_vs_no_trump: standard
+      attitude_vs_no_trump: standard
+      primary_signal_to_partner_lead: attitude

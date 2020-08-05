@@ -1,0 +1,425 @@
+---
+format: ACBL
+version: 0.1
+sections:
+  general:
+    fields:
+      - id: title
+        required: true
+      - id: general_approach
+      - id: two_over_one
+        label: 2/1
+        type: radio
+        options:
+          - value: game_forcing
+          - value: game_forcing_unless_suit_rebid
+          - value: not_applicable
+      - id: very_light
+        type: multi_checkbox
+        options:
+          - value: opening
+          - value: 3rd_hand
+          - value: overcalls
+          - value: preempts
+      - id: forcing_opening
+        type: multi_checkbox
+        required: true
+        options:
+          - value: 1!c
+            alert: Alert
+          - value: 2!c
+          - value: natural_2_bids
+            alert: Alert
+          - value: none
+      - id: notes
+        type: textarea
+  no_trump:
+    fields:
+      - id: opening_ranges
+        type: grouping
+        fields:
+          - id: 1!n_range
+            required: true
+          - id: 2!n_range
+          - id: 3!n_range
+      - id: notes
+        type: textarea
+    conventions: []
+  major_opening:
+    fields:
+      - id: expected_mins
+        label: Expected minimum length
+        type: grouping
+        fields:
+          - id: expected_min_length_1st_2nd
+            label: 1st/2nd seat
+            type: radio
+            required: true
+            options:
+              - value: 4
+              - value: 5
+          - id: expected_min_length_3rd_4th
+            label: 3rd/4th seat
+            type: radio
+            required: true
+            options:
+              - value: 4
+              - value: 5
+      - id: notes
+        type: textarea
+    conventions: []
+  minor_opening:
+    fields:
+      - id: expected_mins
+        label: Expected minimum length
+        type: grouping
+        fields:
+          - id: expected_min_length_clubs
+            label: Clubs
+            type: radio
+            required: true
+            options:
+              - value: 4+_!c
+              - value: 3+_!c
+              - value: 0-2_!c
+                announce: Could be short
+              - value: conventional
+                alert: Alert
+          - id: expected_min_length_diamonds
+            label: Diamonds
+            type: radio
+            required: true
+            options:
+              - value: 4+_!d
+              - value: 3+_!d
+              - value: 0-2_!d
+                announce: Could be short
+              - value: conventional
+                alert: Alert
+      - id: notes
+        type: textarea
+    conventions: []
+  two_level_suit_openers:
+    fields:
+      - id: 2!c
+        type: grouping
+        fields:
+          - id: two_club_hcp
+            label: HCP range
+          - id: two_club_strength
+            label: Strength
+            type: radio
+            required: true
+            options:
+              - value: strong
+              - value: other
+                alert: Alert
+          - id: two_club_response
+            label: Responses
+            type: radio
+            options:
+              - value: 2!d_waiting
+              - value: steps
+              - value: controls
+              - value: other
+                label: 'Other: describe below'
+          - id: two_club_response_detail
+            label: Response Detail
+      - id: suit_diamond
+        label: 2!d
+        type: grouping
+        fields:
+          - id: two_diamond_hcp
+            label: HCP range
+          - id: two_diamond_strength
+            label: Strength
+            type: radio
+            required: true
+            options:
+              - value: weak
+              - value: intermediate
+                alert: Alert
+              - value: strong
+                alert: Alert
+              - value: conventional
+                alert: Alert
+          - id: two_diamond_response
+            label: Responses
+            type: multi_checkbox
+            options:
+              - value: 2!n_forcing
+              - value: new_suit_non_forcing
+                alert: Alert
+      - id: suit_heart
+        label: 2!h
+        type: grouping
+        fields:
+          - id: two_heart_hcp
+            label: HCP range
+          - id: two_heart_strength
+            label: Strength
+            type: radio
+            required: true
+            options:
+              - value: weak
+              - value: intermediate
+                alert: Alert
+              - value: strong
+                alert: Alert
+              - value: conventional
+                alert: Alert
+          - id: two_heart_response
+            label: Responses
+            type: multi_checkbox
+            options:
+              - value: 2!n_forcing
+              - value: new_suit_non_forcing
+                alert: Alert
+      - id: suit_spade
+        label: 2!s
+        type: grouping
+        fields:
+          - id: two_spade_hcp
+            label: HCP range
+          - id: two_spade_strength
+            label: Strength
+            type: radio
+            required: true
+            options:
+              - value: weak
+              - value: intermediate
+                alert: Alert
+              - value: strong
+                alert: Alert
+              - value: conventional
+                alert: Alert
+          - id: two_spade_response
+            label: Responses
+            type: multi_checkbox
+            options:
+              - value: 2!n_forcing
+              - value: new_suit_non_forcing
+                alert: Alert
+      - id: notes
+        type: textarea
+    conventions: []
+  other_conventional_calls:
+    fields:
+      - id: notes
+        type: textarea
+    conventions: []
+  preempts:
+    fields:
+      - id: 3/4_level_bids
+        type: radio
+        options:
+          - value: sound
+          - value: light
+          - value: very_light
+      - id: notes
+        type: textarea
+    conventions: []
+  special_doubles:
+    fields:
+      - id: notes
+        type: textarea
+    conventions: []
+  simple_overalls:
+    fields:
+      - id: 1_level_range
+      - id: new_suit_response
+        type: radio
+        options:
+          - value: forcing
+          - value: non-forcing_constructive
+          - value: non-forcing
+      - id: jump_raise_response
+        type: radio
+        options:
+          - value: forcing
+          - value: invitational
+          - value: weak
+      - id: notes
+        type: textarea
+    conventions: []
+  no_trump_overcalls:
+    fields:
+      - id: direct_seat_range
+      - id: balancing_seat_range
+      - id: notes
+        type: textarea
+    conventions: []
+  defense_against_no_trump:
+    fields:
+      - id: versus_1
+        label: Versus (primary)
+        type: grouping
+        fields:
+          - id: versus
+          - id: 2!c
+          - id: 2!d
+          - id: 2!h
+          - id: 2!s
+      - id: versus_2
+        label: Versus (alt)
+        type: grouping
+        fields:
+          - id: versus
+          - id: 2!c
+          - id: 2!d
+          - id: 2!h
+          - id: 2!s
+      - id: notes
+        type: textarea
+    conventions: []
+  over_opponent_takeout_double:
+    fields:
+      - id: new_suit_forcing
+        type: radio
+        options:
+          - value: not_forcing
+          - value: forcing_at_1_level
+          - value: forcing_at_2_level
+      - id: jump_shift
+        type: radio
+        options:
+          - value: forcing
+          - value: invitational
+          - value: weak
+  over_opponent_preempt:
+    fields:
+      - id: double_is
+        type: radio
+        options:
+          - value: for_takeout
+          - value: for_penalty
+  direct_cue_bids:
+    fields:
+      - id: over_minor
+        type: radio
+        options:
+          - value: natural
+            alert: Alert
+          - value: strong_takeout
+          - value: michaels
+      - id: over_major
+        type: radio
+        options:
+          - value: natural
+            alert: Alert
+          - value: strong_takeout
+          - value: michaels
+      - id: notes
+        type: textarea
+    conventions: []
+  slam_conventions:
+    fields:
+      - id: notes
+        type: textarea
+    conventions: []
+  leads:
+    fields:
+      - id: versus_suits
+        type: grouping
+        columns: 2
+        default_type: character_select
+        fields:
+          - id: lead_vs_suit_AKx
+          - id: lead_vs_suit_KQx
+          - id: lead_vs_suit_QJx
+          - id: lead_vs_suit_JT9
+          - id: lead_vs_suit_KQT9
+          - id: lead_vs_suit_T9x
+          - id: lead_vs_suit_KJTx
+          - id: lead_vs_suit_KT9x
+          - id: lead_vs_suit_QT9x
+          - id: lead_vs_suit_xx
+            alert_if: 2
+          - id: lead_vs_suit_xxx
+          - id: lead_vs_suit_xxxx
+          - id: lead_vs_suit_xxxxx
+      - id: versus_!n
+        type: grouping
+        columns: 2
+        default_type: character_select
+        fields:
+          - id: lead_vs_nt_AKJx
+          - id: lead_vs_nt_AJT9
+          - id: lead_vs_nt_KQJx
+          - id: lead_vs_nt_QJTx
+          - id: lead_vs_nt_JT9x
+          - id: lead_vs_nt_AQJx
+          - id: lead_vs_nt_AT9x
+          - id: lead_vs_nt_KQT9
+          - id: lead_vs_nt_QT9x
+          - id: lead_vs_nt_T9xx
+          - id: lead_vs_nt_xx
+            alert_if: 2
+          - id: lead_vs_nt_xxx
+          - id: lead_vs_nt_xxxx
+          - id: lead_vs_nt_xxxxx
+      - id: length_lead_vs_suits
+        type: radio
+        options:
+          - value: 4th_best
+          - value: 3rd/5th_best
+      - id: length_lead_vs_no_trump
+        type: radio
+        options:
+          - value: 4th_best
+          - value: 3rd/5th_best
+      - id: notes
+        type: textarea
+    conventions: []
+  defensive_carding:
+    fields:
+      - id: versus_suit_contracts
+        type: grouping
+        fields:
+          - id: count_vs_suits
+            type: radio
+            required: true
+            options:
+              - value: standard
+              - value: upside_down
+          - id: attitude_vs_suits
+            type: radio
+            required: true
+            options:
+              - value: standard
+              - value: upside_down
+          - id: first_discard_vs_suits
+            type: radio
+            options:
+              - value: lavinthal
+              - value: odd/even
+      - id: versus_nt_contracts
+        type: grouping
+        fields:
+          - id: count_vs_no_trump
+            type: radio
+            required: true
+            options:
+              - value: standard
+              - value: upside_down
+          - id: attitude_vs_no_trump
+            type: radio
+            required: true
+            options:
+              - value: standard
+              - value: upside_down
+          - id: first_discard_vs_no_trump
+            type: radio
+            options:
+              - value: lavinthal
+              - value: odd/even
+      - id: primary_signal_to_partner_lead
+        type: radio
+        required: true
+        options:
+          - value: attitude
+          - value: count
+          - value: suit_preference
+      - id: notes
+        type: textarea
+    conventions: []
