@@ -185,7 +185,7 @@ Bid values are provided as a single string, which is not case sensitive. A limit
 | `h`       | heart, must be preceded by level                       |
 | `s`       | spade, must be preceded by level                       |
 | `n`       | no trump, must be preceded by level                    |
-| `u`       | unbid suit                                             |
+| `u`       | unbid suit, must be preceded by level                  |
 | `x`       | double                                                 |
 | `r`       | redouble                                               |
 | `q`       | cue bid                                                |
