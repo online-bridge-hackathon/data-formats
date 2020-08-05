@@ -114,7 +114,7 @@ Note: null is permitted when a field is not required.
 | multi_checkbox   | permits selecting one of more of provided options                                                                                                      |
 | radio            | permits selecting only one of provided options                                                                                                         |
 | character_select | permits selecting a single character from the last set of character in the field id, e.g. the id `lead_vs_nt_AKJx` would permit selecting A, K, J or x |
-| grouping | | permits defining a nested set of fields. Cannot nest more than one level. |
+| grouping | permits defining a nested set of fields. Cannot nest more than one level. |
 
 ##### Option attributes
 
