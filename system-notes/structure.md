@@ -49,7 +49,7 @@ At a minimum, a structure must define its usage, version, and sections of conten
       general:
       fields:
         - id: title
-        required: true
+          required: true
 
 Each section is composed of fields and optionally an array of conventions. Including the conventions array implies that conventions may be added to that section. It is recommended to specify a `notes` field for each section. For example:
 
@@ -178,7 +178,7 @@ Bid values are provided as a single string, which is not case sensitive. A limit
 | character | meaning                                                |
 | --------- | ------------------------------------------------------ |
 | `.|p`     | pass                                                   |
-| [0-7]     | level, must always be followed by a suit specification |
+| [1-7]     | level, must always be followed by a suit specification |
 | `m`       | minor suit, must be preceded by level                  |
 | `c`       | club, must be preceded by level                        |
 | `d`       | diamond, must be preceded by level                     |
