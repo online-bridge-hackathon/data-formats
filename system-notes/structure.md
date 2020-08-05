@@ -177,7 +177,7 @@ Bid values are provided as a single string, which is not case sensitive. A limit
 
 | character | meaning                                                |
 | --------- | ------------------------------------------------------ |
-| `.|p`     | pass                                                   |
+| `.p`     | pass                                                   |
 | [1-7]     | level, must always be followed by a suit specification |
 | `m`       | minor suit, must be preceded by level                  |
 | `c`       | club, must be preceded by level                        |
