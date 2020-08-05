@@ -197,3 +197,5 @@ Examples:
 | ---------- | -------------------- |
 | `1c.1h.1n` | 1C - P - 1H - P - 1N |
 | `1c 1h x`  | 1C - 1H - x          |
+
+This string can be parsed into an array of bids using regex. The last bid is always assumed to be made by the partnership. Therefore, if an odd number of bids is provided, the first bid was made by We. If an even number of bids is provided, the first bid was made by They.
