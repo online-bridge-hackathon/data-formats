@@ -101,6 +101,7 @@ A standardized set of section names needs to be developed. These could include (
 | options      | only for radio and multi_checkbox |                                                                                     | option must include `value` in snake case; see below                                                 |
 | default_type | no                                |                                                                                     | only for groupings of fields; specifies the default field type for the nested fields                 |
 | alert_if     | no                                |                                                                                     | only for character_select fields, specifies values that must be alerted                              |
+| announce_if  | no                                |                                                                                     | only for character_select fields, specifies values that must be announced                            |
 
 ##### Field types
 
