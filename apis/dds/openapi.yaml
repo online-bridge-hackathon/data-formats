@@ -1,7 +1,11 @@
 openapi: 3.0.2
 info:
+  x-postman:
+    uid: 269006-6e82d502-be44-46b7-878b-21dcfe617096
+    id: 6e82d502-be44-46b7-878b-21dcfe617096
+    publicLink: https://app.getpostman.com/run-collection/0458cd7ef7e3820c8daa
   x-logo:
-    url: "https://online-bridge-hackathon.github.io/data-formats/logo.png"
+    url: "https://storage.googleapis.com/gba-media/logo.png"
     backgroundColor: "#FFFFFF"
     altText: "DDS LOGO"
   description: |
@@ -23,7 +27,7 @@ info:
 
     Forms of authentication:
       - API Key
-  title: DDS
+  title: dds
   version: 0.0.1
   termsOfService: http://example.com/terms/
   contact:
@@ -34,8 +38,8 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
 externalDocs:
-  description: Back to Api Portal
-  url: https://online-bridge-hackathon.github.io/data-formats/
+  description: Api Portal
+  url: https://storage.googleapis.com/gba-docs/index.html
 servers:
   - description: prod
     url: https://dds.prod.globalbridge.app/
@@ -140,7 +144,7 @@ components:
     HandPost:
       content:
         application/json:
-          example: 
+          example:
             hands:
               S:
               - D3
@@ -227,6 +231,79 @@ paths:
           "$ref": "#/components/responses/Default"
       summary: Returns double dummy analyses for the hand
       requestBody:
-        $ref: "#/components/requestBodies/HandPost"
+        content:
+          application/json:
+            example:
+              hands:
+                S:
+                - D3
+                - C6
+                - DT
+                - D8
+                - DJ
+                - D6
+                - CA
+                - C3
+                - S2
+                - C2
+                - C4
+                - S9
+                - S7
+                W:
+                - DA
+                - S4
+                - HT
+                - C5
+                - D4
+                - D7
+                - S6
+                - S3
+                - DK
+                - CT
+                - D2
+                - SK
+                - H8
+                N:
+                - C7
+                - H6
+                - H7
+                - H9
+                - CJ
+                - SA
+                - S8
+                - SQ
+                - D5
+                - S5
+                - HK
+                - C8
+                - HA
+                E:
+                - H2
+                - H5
+                - CQ
+                - D9
+                - H4
+                - ST
+                - HQ
+                - SJ
+                - HJ
+                - DQ
+                - H3
+                - C9
+                - CK
+            schema:
+              type: object
+              properties:
+                hands:
+                  type: object
+                  properties:
+                    N:
+                      $ref: "#/components/schemas/Hand"
+                    S:
+                      $ref: "#/components/schemas/Hand"
+                    E:
+                      $ref: "#/components/schemas/Hand"
+                    W:
+                      $ref: "#/components/schemas/Hand"
       tags: 
         - DDS

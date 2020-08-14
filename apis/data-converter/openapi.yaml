@@ -1,7 +1,11 @@
 openapi: 3.0.2
 info:
+  x-postman:
+    uid: 269006-a313b101-6f6e-4bf7-8ba5-3793460f1fac
+    id: a313b101-6f6e-4bf7-8ba5-3793460f1fac
+    publicLink: https://app.getpostman.com/run-collection/ff150f3749cee6c0b14b
   x-logo:
-    url: "https://online-bridge-hackathon.github.io/data-formats/logo.png"
+    url: "https://storage.googleapis.com/gba-media/logo.png"
     backgroundColor: "#FFFFFF"
     altText: "LOGO"
   description: |
@@ -20,7 +24,7 @@ info:
 
     Forms of authentication:
       - API Key
-  title: Data Converter
+  title: data-converter
   version: 0.0.1
   termsOfService: http://example.com/terms/
   contact:
@@ -31,8 +35,8 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
 externalDocs:
-  description: Back to Api Portal
-  url: https://online-bridge-hackathon.github.io/data-formats/
+  description: Api Portal
+  url: https://storage.googleapis.com/gba-docs/index.html
 servers:
   - description: prod
     url: https://converter.prod.globalbridge.app/
