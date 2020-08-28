@@ -1,7 +1,11 @@
 openapi: 3.0.2
 info:
+  x-postman:
+    uid: 269006-1f02aef5-4284-406a-a389-201aa3e84de1
+    id: 1f02aef5-4284-406a-a389-201aa3e84de1
+    publicLink: https://app.getpostman.com/run-collection/5f8fa4e154c127484708
   x-logo:
-    url: "https://online-bridge-hackathon.github.io/data-formats/logo.png"
+    url: "https://storage.googleapis.com/gba-media/logo.png"
     backgroundColor: "#FFFFFF"
     altText: "OCR LOGO"
   description: | 
@@ -20,7 +24,7 @@ info:
 
     Forms of authentication:
       - API Key
-  title: Bridge OCR
+  title: ocr
   version: 0.0.1
   termsOfService: http://example.com/terms/
   contact:
@@ -30,8 +34,8 @@ info:
   license:
     name: MIT
 externalDocs:
-  description: Back to Api Portal
-  url: https://online-bridge-hackathon.github.io/data-formats/
+  description: Api Portal
+  url: https://storage.googleapis.com/gba-docs/index.html
 servers:
   - description: dev
     url: http://localhost:8080/

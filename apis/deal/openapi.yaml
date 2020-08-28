@@ -1,7 +1,11 @@
 openapi: 3.0.2
 info:
+  x-postman:
+    uid: 269006-0986a6bf-e79c-4326-a35b-cd2246791269
+    id: 0986a6bf-e79c-4326-a35b-cd2246791269
+    publicLink: https://app.getpostman.com/run-collection/374b777419c85ebd6b28
   x-logo:
-    url: "https://online-bridge-hackathon.github.io/data-formats/logo.png"
+    url: "https://storage.googleapis.com/gba-media/logo.png"
     backgroundColor: "#FFFFFF"
     altText: "LOGO"
   description: |
@@ -20,7 +24,7 @@ info:
 
     Forms of authentication:
       - API Key
-  title: Deal
+  title: deal
   version: 0.0.1
   termsOfService: http://example.com/terms/
   contact:
@@ -31,8 +35,8 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
 externalDocs:
-  description: Back to Api Portal
-  url: https://online-bridge-hackathon.github.io/data-formats/
+  description: Api Portal
+  url: https://storage.googleapis.com/gba-docs/index.html
 servers:
   - description: dev
     url: https://deal.prod.globalbridge.app/

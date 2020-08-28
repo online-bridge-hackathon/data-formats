@@ -1,9 +1,9 @@
 asyncapi: '2.0.0'
 info:
-  title: PlayEngine
+  title: play-engine
   version: '1.0.0'
   x-logo:
-    url: "https://online-bridge-hackathon.github.io/data-formats/logo.png"
+    url: "https://storage.googleapis.com/gba-media/logo.png"
     backgroundColor: "#FFFFFF"
     altText: "OCR LOGO"  
   description: |
