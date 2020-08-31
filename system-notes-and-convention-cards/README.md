@@ -190,8 +190,8 @@ Bid values are provided as a single string, which is not case sensitive. A limit
 | `x`       | double                                                 |
 | `r`       | redouble                                               |
 | `q`       | cue bid                                                |
-| '#'       | any non-pass bid                                       |
-| '<'       | used at beginning of sequence to indicate 1 or more undetermined bids preceded this sequence | 
+| `#`       | any non-pass bid                                       |
+| `<`       | used at beginning of sequence to indicate 1 or more undetermined bids preceded this sequence | 
 
 Examples:
 
